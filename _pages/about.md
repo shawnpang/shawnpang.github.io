@@ -23,4 +23,4 @@ If you want to upload your notes (preferably written in html or markdown), or yo
 
 For more info
 ------
-More info can be found in my own github at [smallsillyshwwn](https://github.com/smallsillyshawn) 
+More info can be found in my own github at [smallsillyshawn](https://github.com/smallsillyshawn) 
