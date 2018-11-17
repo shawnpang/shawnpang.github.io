@@ -17,10 +17,10 @@ Feel Free
 ======
 All the notes are written, uploaded, and maintained by me, so feel free to use, download, or share.
 Also, contributions are greatly welcomed! 
-If you want to upload your notes (preferably written in html or markdown), or you have any improvment suggestions for this site, please email them to [spang53@uwo.ca](mailto:spang53@uwo.ca)
+If you want to upload your notes (preferably written in html or markdown), or you have any improvment suggestions for this site, please email them to [spang53@uwo.ca](mailto:spang53@uwo.ca).
 
 
 
 For more info
 ------
-More info can be found in my own github at [smallsillyshwn](https://github.com/smallsillyshawn) 
+More info can be found in my own github at [smallsillyshwwn](https://github.com/smallsillyshawn) 
