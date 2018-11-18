@@ -10,6 +10,8 @@ redirect_from:
 
 ##  All Notes
 
+  * CS
+      * [CS2209](https://smallsillyshawn.github.io/files/Stanford%20Logic.html) (modified with Stanford's online course)
   * MATH
       * [STAT2244](https://smallsillyshawn.github.io/files/STAT2244.html) 
       * [CAL1000](https://smallsillyshawn.github.io/files/CAL1000.pdf)
