@@ -1,0 +1,551 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CS2211</title>
+</head>
+<body>
+<div id="wmd-preview" class="wmd-preview"><div class="md-section-divider"></div><div class="md-section-divider"></div><h1 data-anchor-id="txl1" id="cs2211">CS2211</h1><div class="md-section-divider"></div><h2 data-anchor-id="cc6a" id="cs"><code>CS</code></h2><p data-anchor-id="qg3i"><div class="toc"><div class="toc">
+<ul>
+<li><a href="#cs2211">CS2211</a><ul>
+<li><a href="#cs">CS</a></li>
+<li><a href="#1-introducing-c">1. Introducing C</a><ul>
+<li><a href="#11-history-of-c">1.1 History of C</a></li>
+<li><a href="#12-c-based-languages">1.2 C-Based Languages</a></li>
+<li><a href="#13-strengths-and-weaknesses-of-c">1.3 Strengths and Weaknesses of C</a></li>
+</ul>
+</li>
+<li><a href="#2-c-fundamentals">2. C Fundamentals</a><ul>
+<li><a href="#21-compiling-and-linking">2.1 Compiling and Linking</a></li>
+<li><a href="#22-general-form-of-a-simple-program">2.2 General Form of a Simple Program</a></li>
+<li><a href="#23-comments">2.3 Comments</a></li>
+<li><a href="#24-variables-and-assignment">2.4 Variables and Assignment</a></li>
+<li><a href="#25-defining-names-for-constants">2.5 Defining Names for Constants</a></li>
+<li><a href="#26-layout-of-a-c-program">2.6 Layout of a C Program</a></li>
+</ul>
+</li>
+<li><a href="#3-formatted-inputoutput">3. Formatted Input/Output</a></li>
+<li><a href="#4-expressions">4. Expressions</a><ul>
+<li><a href="#41-introduction">4.1 Introduction</a></li>
+</ul>
+</li>
+<li><a href="#42-operators">4.2 Operators</a></li>
+<li><a href="#5-selection-statements">5. Selection Statements</a></li>
+<li><a href="#6-loops">6. Loops</a></li>
+<li><a href="#7-basic-types">7. Basic Types</a></li>
+<li><a href="#8-arrays">8. Arrays</a><ul>
+<li><a href="#81-definitions">8.1 Definitions</a></li>
+<li><a href="#82-one-dimensional-arrays">8.2 One-Dimensional Arrays</a></li>
+<li><a href="#83-multidimensional-arrays">8.3 Multidimensional Arrays</a></li>
+<li><a href="#84-variable-length-arrays">8.4 Variable-Length Arrays</a></li>
+</ul>
+</li>
+<li><a href="#9-functions">9. Functions</a><ul>
+<li><a href="#91-format">9.1 format</a></li>
+<li><a href="#92-arguments">9.2 Arguments</a></li>
+<li><a href="#93-the-return-statement">9.3 The return Statement</a></li>
+</ul>
+</li>
+<li><a href="#10-program-organization">10. Program Organization</a><ul>
+<li><a href="#101-local-variables">10.1 Local Variables</a></li>
+<li><a href="#102-external-variables">10.2 External Variables</a></li>
+<li><a href="#103-blocks">10.3 Blocks</a></li>
+<li><a href="#104-scope">10.4 Scope</a></li>
+<li><a href="#105-organizing-a-c-program">10.5 Organizing a C Program</a></li>
+</ul>
+</li>
+<li><a href="#11-pointers">11. Pointers</a><ul>
+<li><a href="#111-pointer-variables">11.1 Pointer Variables</a></li>
+<li><a href="#112-the-address-and-indirection-operators">11.2 The Address and Indirection Operators</a></li>
+<li><a href="#113-pointer-assignment">11.3 Pointer Assignment</a></li>
+<li><a href="#114-pointer-as-arguments">11.4 Pointer as Arguments</a></li>
+<li><a href="#115-pointers-as-return-values">11.5 Pointers as Return Values</a></li>
+</ul>
+</li>
+<li><a href="#12-pointers-and-arrays">12. Pointers and Arrays</a></li>
+<li><a href="#13-strings">13. Strings</a></li>
+<li><a href="#14-the-preprocessor">14. The Preprocessor</a><ul>
+<li><a href="#141-how-the-preprocessor-works">14.1 How the Preprocessor Works</a></li>
+<li><a href="#142-preprocessing-directives">14.2 Preprocessing Directives</a></li>
+<li><a href="#143-macro-definitions">14.3 Macro Definitions</a></li>
+<li><a href="#144-conditional-compilation">14.4 Conditional Compilation</a></li>
+<li><a href="#145-miscellaneous-directives">14.5 Miscellaneous Directives</a></li>
+</ul>
+</li>
+<li><a href="#15-writing-large-programs">15. Writing Large Programs</a><ul>
+<li><a href="#151-source-files">15.1 Source Files</a></li>
+<li><a href="#152-header-files">15.2 Header Files</a></li>
+<li><a href="#153-divding-a-program-into-files">15.3 Divding a Program into Files</a></li>
+<li><a href="#154-building-a-multiple-file-program">15.4 Building a Multiple-File Program</a></li>
+</ul>
+</li>
+<li><a href="#16-structures-unions-and-enumerations">16. Structures, Unions, and Enumerations</a><ul>
+<li><a href="#161-structure-variables">16.1 Structure Variables</a></li>
+<li><a href="#162-structure-types">16.2 Structure Types</a></li>
+<li><a href="#163-nested-arrays-and-structures">16.3 Nested Arrays and Structures</a></li>
+<li><a href="#164-unions">16.4 Unions</a></li>
+<li><a href="#165-enumerations">16.5 Enumerations</a></li>
+</ul>
+</li>
+<li><a href="#17-advanced-uses-of-pointers">17. Advanced Uses of Pointers</a></li>
+<li><a href="#18-declarations">18. Declarations</a></li>
+<li><a href="#19-program-design">19. Program Design</a></li>
+<li><a href="#20-low-level-programming">20. Low-Level Programming</a></li>
+<li><a href="#21-the-standard-library">21. The Standard Library</a></li>
+<li><a href="#22-inputoutput">22. Input/Output</a></li>
+<li><a href="#23-library-support-for-numbers-and-character-data">23. Library Support for Numbers and Character Data</a></li>
+<li><a href="#24-error-handling">24. Error Handling</a></li>
+<li><a href="#25-international-features">25. International Features</a></li>
+<li><a href="#26-miscellaneous-library-functions">26. Miscellaneous Library Functions</a></li>
+<li><a href="#27-additional-c99-support-for-mathematics">27. Additional C99 Support for Mathematics</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</p><hr><div class="md-section-divider"></div><h2 data-anchor-id="bjbl" id="1-introducing-c">1. Introducing C</h2><div class="md-section-divider"></div><h3 data-anchor-id="1gj9" id="11-history-of-c">1.1 History of C</h3><ul data-anchor-id="6leh">
+<li>Origins <br>
+<ul><li>1969 By-product of UNIX</li>
+<li>1973 Assembly &gt; B &gt; New B &gt; C</li></ul></li>
+<li>Standardization <br>
+<ul><li>1978 The C Programming Language by Brian Kernighan and Dennis Richie</li>
+<li>K&amp;R's fussiness</li>
+<li>1980s C's Compiler available on other plarforms</li>
+<li>1990 International Organization for Standardization (ISO) (C90)</li>
+<li>1999 New ISO publication (C99)</li></ul></li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="8qir" id="12-c-based-languages">1.2 C-Based Languages</h3><ul data-anchor-id="oaxs">
+<li>C++ includes all the features of C, but adds classes and other features to support OOP</li>
+<li>Java is based on C++</li>
+<li>C# is a more recent language derived from C++ and Java</li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="dfiv" id="13-strengths-and-weaknesses-of-c">1.3 Strengths and Weaknesses of C</h3><pre data-anchor-id="9fdn"><code>* Features
+    * C is a low-level language
+    * C is a small language - less features but more libraries
+    * C is a permissive language
+* Strengths
+    * Efficiency
+    * Portability
+    * Power
+    * Flexibility
+    * Standard Library
+    * Integration with UNIX
+* Weaknesses
+    * C programs can be error-prone
+    * C program can be diffilcult to understand
+    * Difficult to modify
+</code></pre><hr><div class="md-section-divider"></div><h2 data-anchor-id="y5kc" id="2-c-fundamentals">2. C Fundamentals</h2><div class="md-section-divider"></div><h3 data-anchor-id="uj9f" id="21-compiling-and-linking">2.1 Compiling and Linking</h3><ul data-anchor-id="z04p">
+<li>Preprocessing <br>
+<ul><li>Preprocessor checks commands that begin with # - directives</li></ul></li>
+<li>Compiling <br>
+<ul><li>A compiler translates the source code into object code (machine instructions)</li></ul></li>
+<li>Linking <br>
+<ul><li>A linker combines the object code produced by the compiler with any additional code needed</li></ul></li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="u9np" id="22-general-form-of-a-simple-program">2.2 General Form of a Simple Program</h3><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="3t6w" style=""><ol class="linenums"><li class="L0"><code class="language-C"><span class="typ">Directives</span></code></li><li class="L1"><code class="language-C"><span class="com">#include</span><span class="str">&lt;stdio.h&gt;</span></code></li><li class="L2"><code class="language-C"><span class="com">//to indicate that information in &lt;stdio.h&gt; is to be included.</span></code></li><li class="L3"><code class="language-C"><span class="typ">Functions</span></code></li><li class="L4"><code class="language-C"><span class="typ">Library</span><span class="pln"> </span><span class="typ">Functions</span><span class="pln"> </span><span class="pun">/</span><span class="pln"> </span><span class="typ">User</span><span class="pln"> </span><span class="typ">Functions</span></code></li></ol></pre><ul data-anchor-id="1bt4">
+<li>Notes:  <br>
+<ul><li>main function is mandatory <br>
+<ul><li>main should return 0</li>
+<li>terminate</li>
+<li>signal state</li></ul></li>
+<li>Statements <br>
+<ul><li>A statement is a command to be executed when the program runs.</li>
+<li>Function call and return statement</li></ul></li>
+<li>String Literal <br>
+<ul><li>a series of characters enclosed in double quotation marks</li></ul></li></ul></li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="todf" id="23-comments">2.3 Comments</h3><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="0uou" style=""><ol class="linenums"><li class="L0"><code class="language-C"><span class="com">/* comments */</span></code></li><li class="L1"><code class="language-C"><span class="com">// comments</span></code></li></ol></pre><div class="md-section-divider"></div><h3 data-anchor-id="xt1y" id="24-variables-and-assignment">2.4 Variables and Assignment</h3><ul data-anchor-id="8yos">
+<li>Definition <br>
+<ul><li>data storage locations are called variables</li></ul></li>
+<li>Types <br>
+<ul><li>Type specifies what kind of data to hold</li></ul></li>
+<li>Declarations <br>
+<ul><li>Variables must be declared before use</li>
+<li>type + variable name</li>
+<li>C99 does not require all declarations to be before statements, but it's a convention</li></ul></li>
+<li>Assignment <br>
+<ul><li>A variable can be given a value by means of assignment.</li>
+<li>Initialization <br>
+<ul><li>uninitialized: values that have been declared but not assigned a value yet</li>
+<li>intializer: int height = 8;</li></ul></li></ul></li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="kvuj" id="25-defining-names-for-constants">2.5 Defining Names for Constants</h3><ul data-anchor-id="kvgk">
+<li>Macro Definition</li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="q1kc" style=""><ol class="linenums"><li class="L0"><code class="language-C"><span class="com">#defineINCH_PER_POUND 166</span></code></li><li class="L1"><code class="language-C"><span class="com">#define</span><span class="pln"> VALUE </span><span class="pun">(</span><span class="lit">1.0f</span><span class="pun">/</span><span class="lit">3.14159f</span><span class="pun">)</span></code></li><li class="L2"><code class="language-C"><span class="com">//a preprocessing directive</span></code></li></ol></pre><ul data-anchor-id="myfh">
+<li>Identifiers and Keywords <br>
+<ul><li>Identifiers Definition <br>
+<ul><li>Names of variables, functions, macros, and other entiries are called identifiers.</li></ul></li>
+<li>Rule <br>
+<ul><li>can contain letters, digits, and underscores, but must begin with a letter or underscore</li>
+<li>Case sensitive</li></ul></li>
+<li>Keywords <br>
+<ul><li>Keywords have special significance to C compilers and therefore cannot be used as identifiers.</li></ul></li></ul></li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="evn7" id="26-layout-of-a-c-program">2.6 Layout of a C Program</h3><ul data-anchor-id="cdtc">
+<li>Tokens <br>
+<ul><li>groups of characters that can't be split up without changing their meaning.</li></ul></li>
+<li>Space <br>
+<ul><li>has no influence</li>
+<li>Statements can be divided over any number of Lines. </li>
+<li>Space between Jokens makes it easier for the eye to separate them. </li>
+<li>Indentation can make nesting easier to spot.</li>
+<li>Blank lines can divide a program into logical units.</li></ul></li>
+</ul><hr><div class="md-section-divider"></div><h2 data-anchor-id="7pq7" id="3-formatted-inputoutput">3. Formatted Input/Output</h2><ul data-anchor-id="cwp0">
+<li>The printf Function <br>
+<ul><li>Function <br>
+<ul><li>printf(string, expr1, expr2, ...);</li></ul></li>
+<li>Conversion Specifications <br>
+<ul><li>Functionality <br>
+<ul><li>a placeholder representing a value to be fi lled in during printing</li>
+<li>The information that follows the %- character specifies bow the value is converted :ti-om its internal form (binary) to printed form (cbaracters)</li></ul></li>
+<li>Format <br>
+<ul><li>%-m.pX (where m and p are integer constants and X is a letter)</li>
+<li>Both m and pare optional; if p is orn.itted, the period that separates m and p is also dropped.</li>
+<li>The minimum field width, m, specifies lhe minimum number of characters to print.</li>
+<li>The meaning of the precision depends on the choice of X, the conversion specifier</li></ul></li>
+<li>Common Conversion Specifier <br>
+<ul><li>d- Displays an integer in decimal (base I0) form.</li>
+<li>e - Displays a floating-point number in exponential format (scientific notation).</li>
+<li>f - Displays a floating-point number in "fixed decimal" format, without an exponent. </li>
+<li>g - Displays a tloating-point number in either exponential format or fixed decimal format. depending on the number's site. </li>
+<li>Escape Sequences</li>
+<li>Alert (bell) \a</li>
+<li>Backspace \b</li>
+<li>New line \n</li>
+<li>Horizontal tab \ t </li></ul></li></ul></li></ul></li>
+</ul><hr><div class="md-section-divider"></div><h2 data-anchor-id="5mpj" id="4-expressions">4. Expressions</h2><div class="md-section-divider"></div><h3 data-anchor-id="yixu" id="41-introduction">4.1 Introduction</h3><ul data-anchor-id="44od">
+<li>C emphasizes expressions rather than statements</li>
+<li>Expressions are built from variables, constants, and operators.</li>
+</ul><div class="md-section-divider"></div><h2 data-anchor-id="wr9t" id="42-operators">4.2 Operators</h2><ul data-anchor-id="hqin">
+<li>Arithmetic Operators</li>
+<li>Unary Arithmetic Operators <br>
+<ul><li>+/- to show the sign of a number</li></ul></li>
+<li>Binary Arithmetic Operators <br>
+<ul><li><ul><li>addition</li></ul></li>
+<li><ul><li>subtraction</li></ul></li>
+<li><ul><li>multiplication</li></ul></li>
+<li>/ division</li>
+<li>% remainder</li></ul></li>
+<li>Implementation-Defined Behaviour <br>
+<ul><li>The behavior when / and % are used with negative operands is implementation-defined in C89.</li>
+<li>In C99, the result of a division is always truncated toward zero and the value of i % j has the same sign as i.</li></ul></li>
+<li>Operator Precedence <br>
+<ul><li>Highest + -</li>
+<li>Middle * / %</li>
+<li>Lowest + -</li></ul></li>
+<li>Operator Associativity <br>
+<ul><li>An operator is said to be left associative if it groups from left to right.</li>
+<li>The binary arithmetic operators (*, /, %, +, and -) are all left associative</li>
+<li>An operator is right associative if it groups from right to left.</li>
+<li>The unary arithmetic operators (+ and -) are both right associative</li></ul></li>
+<li>Relational Operators</li>
+<li>Logical Operators</li>
+<li>Assignment Operators <br>
+<ul><li>Simple assignment <br>
+<ul><li>used for storing a value into a variable</li>
+<li>The effect of the assignment v = e is to evaluate the expression e and copy its value into v.</li>
+<li>If v and e don’t have the same type, then the value of e is converted to the type of v as the assignment takes place.</li>
+<li>in C, however, assignment is an operator, just like +. <br>
+<ul><li>The value of an assignment v = e is the value of v after the assignment.</li></ul></li></ul></li>
+<li>Side Effect <br>
+<ul><li>An operators that modifies one of its operands is said to have side effect.                * Since assignment is an operator, several assignments can be chained together: <br>
+<ul><li>i = j = k = 0;</li></ul></li>
+<li>The = operator is right associative, so this assignment is equivalent to i = (j = (k = 0));</li>
+<li>Lvalues <br>
+<ul><li>The assignment operator requires an lvalue as its left operand.</li>
+<li>An lvalue represents an object stored in computer memory, not a constant or the result of a computation.</li></ul></li>
+<li>Compound Assignment <br>
+<ul><li>used for updating a value already stored in a variable</li>
+<li>There are nine other compound assignment operators, including the following: -= *= /= %=</li></ul></li></ul></li></ul></li>
+<li>Increment and Decrement Operators <br>
+<ul><li>C provides special ++ (increment) and -- (decrement) operators.</li>
+<li>The ++ operator adds 1 to its operand. The -- operator subtracts 1.</li>
+<li>They can be used as prefix operators (++i and –-i) or postfix operators (i++ and i--).</li>
+<li>++i means “increment i immediately,” while i+ + means “use the old value of i for now, but increment i later.”</li></ul></li>
+<li>Undefined Behaviour <br>
+<ul><li>Statements such as c = (b = a + 2) - (a = 1); and j = i * i++; cause undefined behavior.</li></ul></li>
+</ul><hr><div class="md-section-divider"></div><h2 data-anchor-id="arlo" id="5-selection-statements">5. Selection Statements</h2><p data-anchor-id="6ssx">This Content is omitted.</p><hr><div class="md-section-divider"></div><h2 data-anchor-id="bwln" id="6-loops">6. Loops</h2><p data-anchor-id="yd14">This Content is omitted.</p><hr><div class="md-section-divider"></div><h2 data-anchor-id="luva" id="7-basic-types">7. Basic Types</h2><hr><div class="md-section-divider"></div><h2 data-anchor-id="9via" id="8-arrays">8. Arrays</h2><div class="md-section-divider"></div><h3 data-anchor-id="i91s" id="81-definitions">8.1 Definitions</h3><ul data-anchor-id="r62g">
+<li>An array is a data structure containing a number of data values, all of which have the same type.</li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="8qsd" id="82-one-dimensional-arrays">8.2 One-Dimensional Arrays</h3><ul data-anchor-id="7zu6">
+<li>Array Subscripting <br>
+<ul><li>To access a particular element of an array. we write the atTay name followed by an integer value in square brackets (this is referred to as subscripting or indexing the array).</li></ul></li>
+<li>Initialization <br>
+<ul><li>Array Initializer <br>
+<ul><li>The common form of array initializer is a list of constant expressions enclosed in braces and separaLed by commas</li>
+<li>If the initializer is smaller than the array. the remaining elements of the array are given the value 0</li>
+<li>If an initializer is present, the length of the array may be omitted</li></ul></li>
+<li>Designated Initializers <br>
+<ul><li>int a[l5] = {[2] = 29, [9] = 7, [14] = 48};</li>
+<li>Each number in b rackets is said to be a designator. </li>
+<li>Designators must be integer constant expressions.</li></ul></li>
+<li>Using the sizeof Operator with Arrays <br>
+<ul><li>The sizeof operator can detemine the size of an array (in bytes).</li>
+<li>(sizeof (a) / sizeof (a [0])</li></ul></li></ul></li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="mfnc" id="83-multidimensional-arrays">8.3 Multidimensional Arrays</h3><ul data-anchor-id="7qdg">
+<li>Functionality <br>
+<ul><li>An array may have any number of dimensions. </li>
+<li>C stores arrays in row-major order, wilh row 0 first, then row l. and so forth. </li></ul></li>
+<li>Initializing a Multidimensional Array <br>
+<ul><li>We can create an initializer for a tw
+</li><li>If an initializer is large enough to fiU a multidimensional array. the remaining elements are given the value 0.</li>
+<li>If an inner list is not  enough to fill a row, rhe remaining elements in the row are initialized to 0.</li>
+<li>We can even omit the inner braces.</li>
+<li>In C99, designated initializers work with multidimensional arrays</li></ul></li>
+<li>Constant Arrays</li>
+<li>An array thafs been declared canst should not be modified by the program</li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="jgdp" id="84-variable-length-arrays">8.4 Variable-Length Arrays</h3><pre data-anchor-id="387u"><code>* only supported in C99
+</code></pre><hr><div class="md-section-divider"></div><h2 data-anchor-id="omfl" id="9-functions">9. Functions</h2><div class="md-section-divider"></div><h3 data-anchor-id="dgpl" id="91-format">9.1 format</h3><ul data-anchor-id="krz1">
+<li>Write a Function <br>
+<ul><li>[return type] [function name] (parameters) { body }</li></ul></li>
+<li>Call a function <br>
+<ul><li>function name (arguments);</li></ul></li>
+<li>Definitions <br>
+<ul><li>Functions may not return arrays. but there are no other restrictions on the return type. </li>
+<li>Specifying that the return Lype is void indicates that the function doesn't return a value. </li>
+<li>lf the return type is omitted in C89, the function is presumed to retum a value of type int. In C99. it's illegal to omit the return type of a function. </li>
+<li>Variables declared in the body of a runction belong exclusively to that function: they can't be examined or modified by other functions. </li></ul></li>
+<li>Function Declarations</li>
+<li>Implicit Declarations <br>
+<ul><li>a definition of a function is present prior to any call of the function</li></ul></li>
+<li>Function Declaration</li>
+<li>a declaration of a function is present prior to any call of the function</li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="5xjb" id="92-arguments">9.2 Arguments</h3><ul data-anchor-id="53pi">
+<li>Argument Passing <br>
+<ul><li>In C, arguments are passed by value except for array.</li></ul></li>
+<li>Argument Conversions <br>
+<ul><li>The compiler governing how the arguments are converted depends on whether or not the compiler has seen a prototype for the funcrion (or the function· s full definition) prior to the call.</li>
+<li>YES - &gt; each argument is implicitly converted</li>
+<li>NO -&gt; default argument promotions <br>
+<ul><li>1) float to be double</li>
+<li>2) char and short to int</li></ul></li></ul></li>
+<li>Array Argument <br>
+<ul><li>we may have to provide the length as one argument</li></ul></li>
+<li>Variable-Length Array Parameters <br>
+<ul><li>(int n, int a[n])</li></ul></li>
+<li>Compound Literals <br>
+<ul><li>total= sum_array((int []){3, 0, 3, 4, 1}, 5); </li></ul></li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="5f7l" id="93-the-return-statement">9.3 The return Statement</h3><ul data-anchor-id="umu2">
+<li>Program Termination <br>
+<ul><li>Return in Main</li>
+<li>Older C programs often omit main's return type, taking advantage of the fact that it traditionally defaults to int</li>
+<li>The value returned by main is a status code that-in some operating systems can be tested when the program terminates.</li></ul></li>
+<li>The exit Function <br>
+<ul><li>exit(0);</li>
+<li>exit(EXIT_SUCCESS);</li></ul></li>
+</ul><hr><div class="md-section-divider"></div><h2 data-anchor-id="y0l8" id="10-program-organization">10. Program Organization</h2><div class="md-section-divider"></div><h3 data-anchor-id="9c9b" id="101-local-variables">10.1 Local Variables</h3><ul data-anchor-id="bc8k">
+<li>Introduction <br>
+<ul><li>Definition <br>
+<ul><li>A variable declared in the body of a function is said to be local to the function.</li></ul></li>
+<li>Property <br>
+<ul><li>Automatic storage duration</li>
+<li>Block scope</li></ul></li>
+<li>Static Local Variables <br>
+<ul><li>Puting static in the declaration of a local variable causes it to have static storage duration.</li>
+<li>Static variable has a permanent storage location, so it retains its value throughout the program.</li>
+<li>A static local variable still has block scope, so it's not visible to other functions.</li></ul></li>
+<li>Parameters <br>
+<ul><li>parameters have the same properties as local variables.</li></ul></li></ul></li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="9dqa" id="102-external-variables">10.2 External Variables</h3><ul data-anchor-id="aab7">
+<li>Definition <br>
+<ul><li>Functions can also communicate through external variables - variables that are declared outside the body of any function.</li></ul></li>
+<li>Propertiies <br>
+<ul><li>Static storafe duration</li>
+<li>File scope</li></ul></li>
+<li>Pros and Cons of External Variables <br>
+<ul><li>Cons <br>
+<ul><li>If we change an external variable during maintenance, we'll need to check every function.</li>
+<li>If an external variable is assigned an incorrect value, it may be difficult to identify the guilty function</li>
+<li>Functions that rely on external variables are hard to reuse.</li></ul></li></ul></li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="gsc7" id="103-blocks">10.3 Blocks</h3><ul data-anchor-id="9fos">
+<li>The storage duration of a varaibled declared in a block is automatic: storage for the variable is allocated when the block is entered and deallocated when the block is exited.</li>
+<li>The variable has block scope.</li>
+<li>A variable that belongs to a block can be declared static to give it static storage duration.</li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="roiy" id="104-scope">10.4 Scope</h3><ul data-anchor-id="iuta">
+<li>When a declaration inside a block names an identifier that's already visible (because it has file scope or because it is declared in an enclosing block), the new declaration temporarily hides the old one, and the identifier takes on a new meaning.</li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="c4zi" id="105-organizing-a-c-program">10.5 Organizing a C Program</h3><ul data-anchor-id="7zan">
+<li>Format</li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="rbof" style=""><ol class="linenums"><li class="L0"><code class="language-C"><span class="com">#include</span><span class="pln"> directives</span></code></li><li class="L1"><code class="language-C"><span class="com">#define</span><span class="pln"> directives</span></code></li><li class="L2"><code class="language-C"><span class="typ">Type</span><span class="pln"> definitions</span></code></li><li class="L3"><code class="language-C"><span class="typ">Declarations</span><span class="pln"> of external variables</span></code></li><li class="L4"><code class="language-C"><span class="typ">Prototypes</span><span class="pln"> </span><span class="kwd">for</span><span class="pln"> functions other than main</span></code></li><li class="L5"><code class="language-C"><span class="typ">Defnition</span><span class="pln"> of main</span></code></li><li class="L6"><code class="language-C"><span class="typ">Definitions</span><span class="pln"> of other functions</span></code></li></ol></pre><hr><div class="md-section-divider"></div><h2 data-anchor-id="v28q" id="11-pointers">11. Pointers</h2><div class="md-section-divider"></div><h3 data-anchor-id="p0u3" id="111-pointer-variables">11.1 Pointer Variables</h3><ul data-anchor-id="hc3s">
+<li>Declaring Pointer Variable <br>
+<ul><li>the name of a pointer variable must be preceded by an asterisk.</li>
+<li><code>int *p;</code> </li>
+<li>This declaration states that p is a pointer variable capable of pointing to objects of type int. </li>
+<li>Pointer variables can appear in declarations along with other variables;</li>
+<li>C requires that every pointer variable point only to objectc; of a particular type (the referenced type)</li></ul></li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="8fyq" id="112-the-address-and-indirection-operators">11.2 The Address and Indirection Operators</h3><ul data-anchor-id="safu">
+<li>The Address Operator &amp; <br>
+<ul><li><code>p = &amp;i;</code> </li></ul></li>
+<li>The Indirection Operator * <br>
+<ul><li>Once a pointer variable points to an object. we can use the * (indirection) operator to access whar's stored in the object.</li></ul></li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="339v" id="113-pointer-assignment">11.3 Pointer Assignment</h3><ul data-anchor-id="duuc">
+<li>C allows the use of assignment operator to copy pointer, provided that they have the same type.</li>
+<li>Any number of pointer variables may point to the same object. </li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="9hoo" id="114-pointer-as-arguments">11.4 Pointer as Arguments</h3><ul data-anchor-id="bcpn">
+<li>Modify Arrays</li>
+<li>Return Two Results</li>
+<li>Scan Function</li>
+<li>Using const to Protect Argument <br>
+<ul><li>We can use the word const to document that a function won't change an object whose address is passed to the function. cons t goes in the parameter's E!l11 declaration, just before the specification of its type</li></ul></li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="03wd" id="115-pointers-as-return-values">11.5 Pointers as Return Values</h3><ul data-anchor-id="97lj">
+<li>Then the variable has to be decaled as static</li>
+</ul><hr><div class="md-section-divider"></div><h2 data-anchor-id="r3a6" id="12-pointers-and-arrays">12. Pointers and Arrays</h2><hr><div class="md-section-divider"></div><h2 data-anchor-id="twlk" id="13-strings">13. Strings</h2><hr><div class="md-section-divider"></div><h2 data-anchor-id="0b4t" id="14-the-preprocessor">14. The Preprocessor</h2><div class="md-section-divider"></div><h3 data-anchor-id="efzo" id="141-how-the-preprocessor-works">14.1 How the Preprocessor Works</h3><ul data-anchor-id="6zl4">
+<li>The behavior of the preprocessor is controlled by <strong>preprocessing directives</strong>: commands that begin with a # character.  <br>
+<ul><li>The <strong>#define directive</strong> defines a <strong>macro</strong> - a name that represents something else, such as a constant or frequently used expression. </li>
+<li>The <strong>#include</strong> directive tells the preprocessor to open a pruticular file and "include" its contents as part of the file being compiled. </li></ul></li>
+<li>The Process of Preprocessing <br>
+<ul><li>The input to the preprocessor is a C program, possibly containing directives. </li>
+<li>The preprocessor executes these directives, removing them in the process. </li>
+<li>The output of the preprocessor is another C program: an edited version of the origjnal program, containing no directives. </li>
+<li>The preprocessor's output goes directly into the compiler. which checks the program for errors and translates it to object code.</li></ul></li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="2txc" id="142-preprocessing-directives">14.2 Preprocessing Directives</h3><ul data-anchor-id="rvol">
+<li>Most preprocessing directives fall into one of three categories:  <br>
+<ul><li><strong>Macro definition</strong>: The #define directive defines a macro; the #undef directive removes a macro definition. </li>
+<li><strong>File inclusion</strong>: The #include directive causes Lhe contents of a specified file to be included in a program. </li>
+<li><strong>Conditional compilation</strong>: the #if, #ifdef, #ifndef, #eli£, #else, and #endif directives allow blocks of text to be either included in or excluded from a program, depending on conditions that can be tested by the preprocessor. </li></ul></li>
+<li>There are a few rules that apply to all directives <br>
+<ul><li>Directives always begin with the <strong># symbol</strong>.</li>
+<li>Any number of spaces and horizontal tab characters may <strong>separate the tokens</strong> in a directive. </li>
+<li>Directives always <strong>end at the first new-line character</strong>, unless explicitly continued.</li>
+<li>Directives can appear <strong>anywhere</strong> in a program. </li>
+<li><strong>Comments</strong> may appear on the same line as a directive. </li></ul></li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="8i8p" id="143-macro-definitions">14.3 Macro Definitions</h3><ul data-anchor-id="vp5l">
+<li>Simple Macros <br>
+<ul><li>The definition of a <strong>simple macro</strong> (or <strong>object-like macro</strong>, as it·s called in the C standard) has the form, <code>#define identifier replacement-list</code>, where replacement-list is any sequence of <strong>preprocessing tokens</strong>.</li>
+<li>When it encounters a macro definition, the preprocessor makes a note that identifier represents replacement-list; wherever identifier appears later in the file, the preprocessor substitutes replacement-list. </li>
+<li>lncidentnlly. it's legal for a macro's replacement list to be empty.</li></ul></li>
+<li>Use #define to create names for constants has several significant advantages <br>
+<ul><li>It makes programs easier to read.</li>
+<li>It makes programs easier to modify</li>
+<li>It helps avoid inconsistencies and typographical errors.</li>
+<li>Making minor changes to the syntax of C <br>
+<ul><li>like: <code>#define BEGIN {</code> or <code>#define END }</code></li></ul></li>
+<li>Renaming types. <br>
+<ul><li><code>#define BOOL int</code></li></ul></li>
+<li>Controlling conditional compilation</li></ul></li>
+<li><p>Parameterized Macros</p>
+
+<ul><li>The definition of a <strong>parameterized macro</strong> (also known as a function-like macro) has the form <code>#define identifier( x1, x2, x3, x4, ..., xn) replacement-list</code> <br>
+<ul><li>There must be no space between the macro name and the left parenthesis. lf space is left. the preprocessor will assume tbat we're defining a simple macro; it will treat (x 1 , x2 ,..., xn,) as part of the replacement list. </li></ul></li>
+<li>Using a parameterized macro instead of a true function has a couple of advantages <br>
+<ul><li>The program may be slightly faster. (however, the C99's inline functions provide a way to avoid this overhead without the use of macros)</li>
+<li>Macros are generic </li></ul></li>
+<li>But parameterized macros also have disadvantages <br>
+<ul><li>The compiled code will often be larger.</li>
+<li>Arguments aren't type-checked.</li>
+<li>It's not possible to have a pointer to a macro.</li>
+<li>A macro may evaluate its arguments more than once. <br>
+<ul><li>like <code>n = MAX(i++, j);</code></li></ul></li></ul></li></ul></li>
+<li><p>The # Operator</p>
+
+<ul><li><strong>The # operator</strong> convet s a macro argument into a string iteral</li>
+<li>it can appear only in rhe replacement list of a parameterized macro. </li></ul></li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="cuwo" style=""><ol class="linenums"><li class="L0"><code class="language-C"><span class="com">#define</span><span class="pln"> PRINT_INT</span><span class="pun">(</span><span class="pln">n</span><span class="pun">)</span><span class="pln"> printf</span><span class="pun">(#</span><span class="pln">n </span><span class="lit">11</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">%</span><span class="pln">d\n</span><span class="str">", n) </span></code></li><li class="L1"><code class="language-C"><span class="str">PRINT_INT(i/j); </span></code></li><li class="L2"><code class="language-C"><span class="str">//which is equivalent to</span></code></li><li class="L3"><code class="language-C"><span class="str">printf("</span><span class="pln">i</span><span class="pun">/</span><span class="pln">j</span><span class="str">" "</span><span class="pun">=</span><span class="pln"> </span><span class="pun">%</span><span class="pln">d\n</span><span class="str">", i/j); </span></code></li><li class="L4"><code class="language-C"><span class="str">/*which is equivalent to</span></code></li><li class="L5"><code class="language-C"><span class="str">printf("</span><span class="pln">i</span><span class="pun">/</span><span class="pln">j </span><span class="pun">=</span><span class="pln"> </span><span class="pun">%</span><span class="pln">d\n</span><span class="str">", i/j); </span></code></li></ol></pre><ul data-anchor-id="ou5b">
+<li><p>The ## Operator </p>
+
+<ul><li>The ## opcrawr can "paste" two mkens (idemHiers. for example) together to form a single token. </li></ul></li>
+<li><p>General Properties of Macros</p></li>
+<li>Creating Longer Macros</li>
+<li>Predefined Macros</li>
+<li>Additional Predefined Macros in C99</li>
+<li>Empty Macro Arguments</li>
+<li>Macros with a Variable Number of Arguments</li>
+<li>The __func__ identifier </li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="fb77" id="144-conditional-compilation">14.4 Conditional Compilation</h3><ul data-anchor-id="u47l">
+<li>The #if and #endif Directives</li>
+<li>The defined Operator</li>
+<li>The #ifdef and #ifndef Directives</li>
+<li>The #elif and #else Directives</li>
+<li>Uses of Conditional Compilation</li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="6002" id="145-miscellaneous-directives">14.5 Miscellaneous Directives</h3><ul data-anchor-id="b68u">
+<li>The #error Directive</li>
+<li>The #line Directive</li>
+<li>The #progma Directive</li>
+<li>The _Progma Operator</li>
+</ul><hr><div class="md-section-divider"></div><h2 data-anchor-id="w2c8" id="15-writing-large-programs">15. Writing Large Programs</h2><div class="md-section-divider"></div><h3 data-anchor-id="yxg5" id="151-source-files">15.1 Source Files</h3><div class="md-section-divider"></div><h3 data-anchor-id="m1jn" id="152-header-files">15.2 Header Files</h3><ul data-anchor-id="c8h9">
+<li>The #include Directive</li>
+<li>Sharing Macro Definitions and Type Definitios</li>
+<li>Sharing Functions Prototypes</li>
+<li>Sharing Variable Declarations</li>
+<li>Nested Includes</li>
+<li>Protecting Header Files</li>
+<li>#error Directives in Header Files</li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="g0ws" id="153-divding-a-program-into-files">15.3 Divding a Program into Files</h3><div class="md-section-divider"></div><h3 data-anchor-id="vf5d" id="154-building-a-multiple-file-program">15.4 Building a Multiple-File Program</h3><ul data-anchor-id="ykvc">
+<li>Makefiles</li>
+<li>Errors During Linking</li>
+<li>Rebuilding a Program</li>
+<li>Defining Macros Outside a Program</li>
+</ul><hr><div class="md-section-divider"></div><h2 data-anchor-id="p0dg" id="16-structures-unions-and-enumerations">16. Structures, Unions, and Enumerations</h2><div class="md-section-divider"></div><h3 data-anchor-id="hzy5" id="161-structure-variables">16.1 Structure Variables</h3><ul data-anchor-id="ymib">
+<li>Introduction <br>
+<ul><li>A <strong>structure</strong> is a collection of values, possibly of different types.</li>
+<li>The elements of a structure, its <strong>member</strong>, aren't reuired to have the same type.</li>
+<li>The members of a structure have names - therefore to select a particular member, we specify its name, not its position.</li></ul></li>
+<li>Declaring Structure Variables <br>
+<ul><li>In the codes below, <code>struct{ ... }</code> specifies a type, while <code>part1</code> and <code>part2</code> are variables of that type.</li>
+<li>'The members of a structure are stoed in memory in the order in which they are declared.</li>
+<li>Each structure represents a new scope; any names declared in that scope won't conflict with other names in a program - each structure has a separate <strong>name space</strong> for its members.</li></ul></li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="xqix" style=""><ol class="linenums"><li class="L0"><code class="language-C"><span class="kwd">struct</span><span class="pun">{</span></code></li><li class="L1"><code class="language-C"><span class="pln">    </span><span class="kwd">int</span><span class="pln"> number</span><span class="pun">;</span></code></li><li class="L2"><code class="language-C"><span class="pln">    </span><span class="kwd">char</span><span class="pln"> name</span><span class="pun">[</span><span class="pln">NAME_LEN </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pun">];</span></code></li><li class="L3"><code class="language-C"><span class="pln">    </span><span class="kwd">int</span><span class="pln"> on_hand</span><span class="pun">;</span></code></li><li class="L4"><code class="language-C"><span class="pun">}</span><span class="pln">part1</span><span class="pun">,</span><span class="pln"> part2</span><span class="pun">;</span></code></li></ol></pre><ul data-anchor-id="7bcq">
+<li>Initializing Structure Variables <br>
+<ul><li>A structure variable may be initialized at the time it's declared.</li>
+<li>To initialize a structure, we prepare a list of values to be stored in the structure and enclose it in braces.</li>
+<li>The values in the initializer must appear in the same order as the members of the structure.</li>
+<li>Structure initializers follow rules similar to those for array initializer. <br>
+<ul><li>Expressions used in a structure initializer must be constant (but this restriction is relaxed in C99)</li>
+<li>An initializer can have fewer members than the structure it's initializing. Any leftover members are given 0 as their initial value.</li></ul></li></ul></li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="0w1w" style=""><ol class="linenums"><li class="L0"><code class="language-C"><span class="kwd">struct</span><span class="pun">{</span></code></li><li class="L1"><code class="language-C"><span class="pln">    </span><span class="kwd">int</span><span class="pln"> number</span><span class="pun">;</span></code></li><li class="L2"><code class="language-C"><span class="pln">    </span><span class="kwd">char</span><span class="pln"> name</span><span class="pun">[</span><span class="pln">NAME_LEN </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pun">];</span></code></li><li class="L3"><code class="language-C"><span class="pln">    </span><span class="kwd">int</span><span class="pln"> on_hand</span><span class="pun">;</span></code></li><li class="L4"><code class="language-C"><span class="pun">}</span><span class="pln">part1 </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="lit">527</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Disk drive"</span><span class="pun">,</span><span class="pln"> </span><span class="lit">10</span><span class="pun">},</span></code></li><li class="L5"><code class="language-C"><span class="pln"> part2 </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="lit">914m</span><span class="pln"> </span><span class="str">"Printer cable"</span><span class="pun">,</span><span class="pln"> </span><span class="lit">5</span><span class="pun">};</span></code></li></ol></pre><ul data-anchor-id="lj0s">
+<li>Designated Initializers <br>
+<ul><li>In a designated initializer, each value labeled by the name of of the member that it nitializes. <br>
+<ul><li>The combination of the period and the member name is called a <strong>designator</strong></li></ul></li>
+<li>Designated initializers have several advantages. <br>
+<ul><li>They are easier to read and check for correctness.</li>
+<li>The values in the initializer don't have to be placed in the same order that the members are listed in the structure.</li>
+<li>The order of the members can be changed in the future without affecting designated initializers.</li></ul></li>
+<li>Not all values listed in a designated initializer need to be prefixed by a designator.</li>
+<li>Any members that the initializer fails to account for are set to zero.</li></ul></li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="hh4i" style=""><ol class="linenums"><li class="L0"><code class="language-C"><span class="kwd">struct</span><span class="pun">{</span></code></li><li class="L1"><code class="language-C"><span class="pln">    </span><span class="kwd">int</span><span class="pln"> number</span><span class="pun">;</span></code></li><li class="L2"><code class="language-C"><span class="pln">    </span><span class="kwd">char</span><span class="pln"> name</span><span class="pun">[</span><span class="pln">NAME_LEN </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pun">];</span></code></li><li class="L3"><code class="language-C"><span class="pln">    </span><span class="kwd">int</span><span class="pln"> on_hand</span><span class="pun">;</span></code></li><li class="L4"><code class="language-C"><span class="pun">}</span><span class="pln">part1 </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="pun">.</span><span class="pln">name </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Disk drive"</span><span class="pun">,</span><span class="pln"> </span><span class="pun">.</span><span class="pln">number </span><span class="pun">=</span><span class="pln"> </span><span class="lit">527</span><span class="pun">,</span><span class="pln"> </span><span class="pun">.</span><span class="pln">on_hand </span><span class="pun">=</span><span class="pln"> </span><span class="lit">10</span><span class="pun">},</span></code></li><li class="L5"><code class="language-C"><span class="pln"> part2 </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="pun">.</span><span class="pln">number </span><span class="pun">=</span><span class="pln"> </span><span class="lit">527</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Disk drive"</span><span class="pun">,</span><span class="pln"> </span><span class="pun">.</span><span class="pln">on_hand </span><span class="pun">=};</span></code></li></ol></pre><ul data-anchor-id="myb2">
+<li>Operations on Structures <br>
+<ul><li>To access a member within a structure, we write the name of the structure first, then a period, then the name of the member.<br><code>part1.number</code></li>
+<li>The members of a structure are lvalues, so they can appear on the left side of an assignment or as the operand in an increment or decrement expression.<br><code>part1.number = 258</code><br><code>part1.on_hand++;</code></li>
+<li>The . period that we use to access a structure member is actuallt a C operator, and it has the same precedence as the postfix ++ and -- operators, so it takes precedence over nearly all other operators.</li>
+<li>The other major structure operation is assignment:<br><code>part2 = part1;</code><br>The effect of this statement is to copy <code>part1.number</code> into <code>part2.number</code>, <code>part1.name</code> into <code>part2.name</code>and so on. <br>
+<ul><li>The = operator can be used only with structures of <strong>compatible</strong> types.</li>
+<li>Two structures declared at the same time are compatible.</li></ul></li></ul></li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="2vu5" id="162-structure-types">16.2 Structure Types</h3><ul data-anchor-id="89qh">
+<li>Introduction <br>
+<ul><li>If we want to declare a variable of a structure first, and then declare another one at a later time, without the type of the structure, we would have to write the structure twice.</li>
+<li>This leads to two difficuties <br>
+<ul><li>One is that the program will soon be bloated to be too large.</li>
+<li>The other is that those two variables declared at different time and position will be considered to be not compatible, so they cannot assign value to each other.</li></ul></li></ul></li>
+<li>Declaring a Structure Tag <br>
+<ul><li>A <strong>structure tag</strong> is a name used to identify a particular kind of structure.</li>
+<li>Once we've created the name tag, we can use it to declare variables, but we can't drop the word <code>struct</code>. <br>
+<ul><li>Since structures tags aren't recognized unless preceded by the word <code>struct</code>, they don't conflict with other names used in a program.</li>
+<li>The declaration of a structure tag can be conbined with the declaration of structure variables;</li>
+<li>Declaring a structure tag is mantatorg when structure is to be used in a linked list.</li></ul></li></ul></li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="3sfu" style=""><ol class="linenums"><li class="L0"><code class="language-C"><span class="kwd">struct</span><span class="pln"> part</span><span class="pun">{</span></code></li><li class="L1"><code class="language-C"><span class="pln">    </span><span class="kwd">int</span><span class="pln"> number</span><span class="pun">;</span></code></li><li class="L2"><code class="language-C"><span class="pln">    </span><span class="kwd">char</span><span class="pln"> name</span><span class="pun">[</span><span class="pln">NALE_LEN</span><span class="pun">+</span><span class="lit">1</span><span class="pun">];</span></code></li><li class="L3"><code class="language-C"><span class="pln">    </span><span class="kwd">int</span><span class="pln"> on_hand</span><span class="pun">;</span></code></li><li class="L4"><code class="language-C"><span class="pun">}</span><span class="pln">part3</span><span class="pun">;</span></code></li><li class="L5"><code class="language-C"></code></li><li class="L6"><code class="language-C"><span class="kwd">struct</span><span class="pln"> part part1</span><span class="pun">,</span><span class="pln"> part2</span><span class="pun">;</span></code></li></ol></pre><ul data-anchor-id="pwfk">
+<li>Defining a Structure Type <br>
+<ul><li>We can use <code>typedef</code> to define a genuine type name. <br>
+<ul><li>The name of the type must come at the end, not after the word struct.</li>
+<li>Then we can use the name of the type in the same way as the built-in types, without using together with the <code>struct</code>.</li></ul></li></ul></li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="qn48" style=""><ol class="linenums"><li class="L0"><code class="language-C"><span class="kwd">typedef</span><span class="pln"> </span><span class="kwd">struct</span><span class="pun">{</span></code></li><li class="L1"><code class="language-C"><span class="pln">    </span><span class="kwd">int</span><span class="pln"> number</span><span class="pun">;</span></code></li><li class="L2"><code class="language-C"><span class="pln">    </span><span class="kwd">char</span><span class="pln"> name</span><span class="pun">[</span><span class="pln">NAME_LEN </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pun">];</span></code></li><li class="L3"><code class="language-C"><span class="pln">    </span><span class="kwd">int</span><span class="pln"> on_hand</span><span class="pun">;</span></code></li><li class="L4"><code class="language-C"><span class="pun">}</span><span class="pln"> </span><span class="typ">Part</span><span class="pun">;</span></code></li><li class="L5"><code class="language-C"></code></li><li class="L6"><code class="language-C"><span class="typ">Part</span><span class="pln"> part1</span><span class="pun">,</span><span class="pln"> part2</span><span class="pun">;</span></code></li></ol></pre><ul data-anchor-id="6kxp">
+<li>Structures as Arguments and Return Values <br>
+<ul><li>Passing a structure to a function and returning a structure from a function both require making a copy of all members in the structure. <br>
+<ul><li>As a result, these operations impose a fair amount of overhead on a program, especially if the structure is large.</li>
+<li>To avoid this overhead, it is sometimes advisable to pass a structure pointer instead of the structure itself.</li></ul></li></ul></li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="h7dg" style=""><ol class="linenums"><li class="L0"><code class="language-C"><span class="com">/*Structures as Argument*/</span></code></li><li class="L1"><code class="language-C"></code></li><li class="L2"><code class="language-C"><span class="kwd">void</span><span class="pln"> print_part</span><span class="pun">(</span><span class="kwd">struct</span><span class="pln"> part p</span><span class="pun">){</span></code></li><li class="L3"><code class="language-C"><span class="pln">    printf</span><span class="pun">(</span><span class="str">"Part number: %d\n"</span><span class="pun">,</span><span class="pln"> p</span><span class="pun">.</span><span class="pln">number</span><span class="pun">);</span></code></li><li class="L4"><code class="language-C"><span class="pln">    printf</span><span class="pun">(</span><span class="str">"Part name: %s\n"</span><span class="pun">,</span><span class="pln"> p</span><span class="pun">.</span><span class="pln">name</span><span class="pun">);</span></code></li><li class="L5"><code class="language-C"><span class="pln">    printf</span><span class="pun">(</span><span class="str">"Quantity on hand: %d\n"</span><span class="pun">,</span><span class="pln"> p</span><span class="pun">.</span><span class="pln">on_hand</span><span class="pun">);</span></code></li><li class="L6"><code class="language-C"><span class="pun">}</span></code></li></ol></pre><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="bc5u" style=""><ol class="linenums"><li class="L0"><code class="language-C"><span class="com">/*Structure as Return Value*/</span></code></li><li class="L1"><code class="language-C"><span class="kwd">struct</span><span class="pln"> part build_part</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> number</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">const</span><span class="pln"> </span><span class="kwd">char</span><span class="pln"> </span><span class="pun">*</span><span class="pln">name</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> on_hand</span><span class="pun">){</span></code></li><li class="L2"><code class="language-C"><span class="pln">    </span><span class="kwd">struct</span><span class="pln"> part p</span><span class="pun">;</span></code></li><li class="L3"><code class="language-C"></code></li><li class="L4"><code class="language-C"><span class="pln">    p</span><span class="pun">.</span><span class="pln">number </span><span class="pun">=</span><span class="pln"> number</span><span class="pun">;</span></code></li><li class="L5"><code class="language-C"><span class="pln">    strcpy</span><span class="pun">(</span><span class="pln">p</span><span class="pun">.</span><span class="pln">name</span><span class="pun">,</span><span class="pln"> name</span><span class="pun">);</span></code></li><li class="L6"><code class="language-C"><span class="pln">    p</span><span class="pun">.</span><span class="pln">on_hand </span><span class="pun">=</span><span class="pln"> on_hand</span><span class="pun">;</span></code></li><li class="L7"><code class="language-C"><span class="pln">    </span><span class="kwd">return</span><span class="pln"> p</span><span class="pun">;</span></code></li><li class="L8"><code class="language-C"><span class="pun">}</span></code></li><li class="L9"><code class="language-C"></code></li><li class="L0"><code class="language-C"><span class="kwd">struct</span><span class="pln"> part part1 </span><span class="pun">=</span><span class="pln"> build_part</span><span class="pun">(</span><span class="lit">528</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Disk drive"</span><span class="pun">,</span><span class="pln"> </span><span class="lit">10</span><span class="pun">);</span></code></li></ol></pre><ul data-anchor-id="7fcf">
+<li>Compound Literals <br>
+<ul><li>Compound literals were used to create unnamed arrays, usually for the purpose of passing the array to a function.</li>
+<li>A compound literal can also be used to create a structure "on the fly", without first storing it in a variable. <br>
+<ul><li>The resulting structure can be passed as a parameter, returned by a function, or assigned to a variable.</li>
+<li>in general, a compound literal consists of a type name within parentheses, followed by a set of values enclosed by braces.</li></ul></li></ul></li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="1jhj" style=""><ol class="linenums"><li class="L0"><code class="language-C"><span class="pln">print_part</span><span class="pun">((</span><span class="kwd">struct</span><span class="pln"> part</span><span class="pun">){</span><span class="lit">528</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Disk drive"</span><span class="pun">,</span><span class="pln"> </span><span class="lit">10</span><span class="pun">});</span></code></li><li class="L1"><code class="language-C"></code></li><li class="L2"><code class="language-C"><span class="kwd">struct</span><span class="pln"> part part1 </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">struct</span><span class="pln"> part</span><span class="pun">){</span><span class="lit">528</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Disk drive"</span><span class="pun">,</span><span class="pln"> </span><span class="lit">10</span><span class="pun">};</span></code></li><li class="L3"><code class="language-C"></code></li><li class="L4"><code class="language-C"><span class="pln">print_part</span><span class="pun">((</span><span class="kwd">struct</span><span class="pln"> part</span><span class="pun">){.</span><span class="pln">on_hand </span><span class="pun">=</span><span class="pln"> </span><span class="lit">10</span><span class="pun">,</span><span class="pln"> </span><span class="lit">528</span><span class="pun">,</span><span class="pln"> </span><span class="pun">.</span><span class="pln">name </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Disk drive"</span><span class="pun">,.</span><span class="pln">number </span><span class="pun">=</span><span class="pln"> </span><span class="lit">528</span><span class="pln"> </span><span class="pun">});</span></code></li></ol></pre><div class="md-section-divider"></div><h3 data-anchor-id="jo7r" id="163-nested-arrays-and-structures">16.3 Nested Arrays and Structures</h3><ul data-anchor-id="gkdm">
+<li>Nested Structures</li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="xzuq" style=""><ol class="linenums"><li class="L0"><code class="language-C"><span class="kwd">struct</span><span class="pln"> person_name</span><span class="pun">{</span></code></li><li class="L1"><code class="language-C"><span class="pln">    </span><span class="kwd">char</span><span class="pln"> first</span><span class="pun">[</span><span class="pln">FIRST_NAME_LEN </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pun">];</span></code></li><li class="L2"><code class="language-C"><span class="pln">    </span><span class="kwd">char</span><span class="pln"> middle_initial1</span><span class="pun">;</span></code></li><li class="L3"><code class="language-C"><span class="pln">    </span><span class="kwd">char</span><span class="pln"> </span><span class="kwd">last</span><span class="pun">[</span><span class="pln">LAST_NAME_LEN </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pun">];</span></code></li><li class="L4"><code class="language-C"><span class="pun">};</span></code></li><li class="L5"><code class="language-C"></code></li><li class="L6"><code class="language-C"><span class="kwd">struct</span><span class="pln"> student </span><span class="pun">{</span></code></li><li class="L7"><code class="language-C"><span class="pln">    </span><span class="kwd">struct</span><span class="pln"> person_name name</span><span class="pun">;</span></code></li><li class="L8"><code class="language-C"><span class="pln">    </span><span class="kwd">int</span><span class="pln"> id</span><span class="pun">,</span><span class="pln"> age</span><span class="pun">;</span></code></li><li class="L9"><code class="language-C"><span class="pln">    </span><span class="kwd">char</span><span class="pln"> sex</span><span class="pun">;</span></code></li><li class="L0"><code class="language-C"><span class="pun">}</span><span class="pln"> student1</span><span class="pun">,</span><span class="pln"> student2</span><span class="pun">;</span></code></li></ol></pre><ul data-anchor-id="vojb">
+<li>Arrays of Structures</li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="ccw5" style=""><ol class="linenums"><li class="L0"><code class="language-C"><span class="kwd">struct</span><span class="pln"> part inventory</span><span class="pun">[</span><span class="lit">100</span><span class="pun">];</span></code></li></ol></pre><ul data-anchor-id="p8nb">
+<li>Initializing an Array of Structures <br>
+<ul><li>In initializing an array of structures, each structure has its own brace-enclosed intializer, and the initializer for the array simply wraps another set of braces around the structre initializers.</li>
+<li>One reason for initializing an array of structures is that we are planning to treat it as a database of information that won't change during program execution.</li></ul></li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="q8es" id="164-unions">16.4 Unions</h3><ul data-anchor-id="hyhl">
+<li>Using Unions to Save Space</li>
+<li>Using Unions to Build Mixed Data Structures</li>
+<li>Adding a "Tag Field" to a Union</li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="el49" id="165-enumerations">16.5 Enumerations</h3><ul data-anchor-id="0anj">
+<li>Enumeration Tags and Type Names</li>
+<li>Enumerations as Inegers</li>
+<li>Using Enumerations to Declare Tag Fields</li>
+</ul><hr><div class="md-section-divider"></div><h2 data-anchor-id="lsnd" id="17-advanced-uses-of-pointers">17. Advanced Uses of Pointers</h2><div class="md-section-divider"></div><h2 data-anchor-id="x4p5" id="18-declarations">18. Declarations</h2><div class="md-section-divider"></div><h2 data-anchor-id="291s" id="19-program-design">19. Program Design</h2><div class="md-section-divider"></div><h2 data-anchor-id="mvis" id="20-low-level-programming">20. Low-Level Programming</h2><div class="md-section-divider"></div><h2 data-anchor-id="ew6u" id="21-the-standard-library">21. The Standard Library</h2><div class="md-section-divider"></div><h2 data-anchor-id="m8uk" id="22-inputoutput">22. Input/Output</h2><div class="md-section-divider"></div><h2 data-anchor-id="vi7u" id="23-library-support-for-numbers-and-character-data">23. Library Support for Numbers and Character Data</h2><div class="md-section-divider"></div><h2 data-anchor-id="8iy0" id="24-error-handling">24. Error Handling</h2><div class="md-section-divider"></div><h2 data-anchor-id="awo7" id="25-international-features">25. International Features</h2><div class="md-section-divider"></div><h2 data-anchor-id="bczd" id="26-miscellaneous-library-functions">26. Miscellaneous Library Functions</h2><div class="md-section-divider"></div><h2 data-anchor-id="ysse" id="27-additional-c99-support-for-mathematics">27. Additional C99 Support for Mathematics</h2></div>
+</body>
+</html>
