@@ -18,4 +18,4 @@ redirect_from:
 - [ ] <a href = "https://www.coursera.org/learn/suanfa-jichu/">北京大学算法基础 </a>
 
 ##  Business
-- [ ] Financial Accounting Basics Summary of All Transactions
+- [X] Financial Accounting Basics Summary of All Transactions
