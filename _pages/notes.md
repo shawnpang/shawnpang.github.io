@@ -16,9 +16,10 @@ redirect_from:
   * MATH
       * [STAT2244](https://smallsillyshawn.github.io/files/STAT2244.html)
       * [CAL1000](https://smallsillyshawn.github.io/files/CAL1000.pdf)
-  * MOS
+  * BUSINESS
       * [MOS1021](https://smallsillyshawn.github.io/files/MOS1021.pdf)
       * [MOS2242](https://smallsillyshawn.github.io/files/MOS2242.html)
+      * [BUS2257](https://smallsillyshawn.github.io/files/BUS2257.html)
   * ECON
       * [ECON1021](https://smallsillyshawn.github.io/files/ECON1021.pdf)
   * OTHERS
