@@ -21,6 +21,6 @@ redirect_from:
       * [MOS2242](https://smallsillyshawn.github.io/files/MOS2242.html)
       * [BUS2257](https://smallsillyshawn.github.io/files/BUS2257.html)
   * ECON
-      * [ECON1021](https://smallsillyshawn.github.io/files/ECON1021.pdf)
+      * [ECON1021](https://smallsillyshawn.github.io/files/ECON1021.pdf) [ECON1021 MindMap](https://smallsillyshawn.github.io/files/ECON1021 MindMap.pdf)
   * OTHERS
       * [PSYCH1000](https://smallsillyshawn.github.io/files/PSYCH1000.pdf)
