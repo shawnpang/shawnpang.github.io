@@ -15,7 +15,7 @@ redirect_from:
       * [CS2211](https://smallsillyshawn.github.io/files/CS2211.html)
   * MATH
       * [STAT2244](https://smallsillyshawn.github.io/files/STAT2244.html)
-      * [CAL1000](https://smallsillyshawn.github.io/files/CAL1000.pdf)
+      * [CAL1000/1301](https://smallsillyshawn.github.io/files/CAL1301.pdf)
   * BUSINESS
       * [MOS1021](https://smallsillyshawn.github.io/files/MOS1021.pdf)
       * [MOS2242](https://smallsillyshawn.github.io/files/MOS2242.html)
