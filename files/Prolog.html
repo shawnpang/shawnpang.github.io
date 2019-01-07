@@ -1,0 +1,312 @@
+﻿<!DOCTYPE html>
+<html class="theme theme-white">
+<head>
+<meta charset="utf-8">
+<title>Prolog</title>
+<link href="https://www.zybuluo.com/static/assets/template-theme-white.css" rel="stylesheet" media="screen">
+<style type="text/css">
+
+#wmd-preview h1  {
+    color: #0077bb; /* 将标题改为蓝色 */
+}</style>
+</head>
+<body class="theme theme-white">
+<div id="wmd-preview" class="wmd-preview wmd-preview-full-reader"><div class="md-section-divider"></div><div class="md-section-divider"></div><h1 data-anchor-id="pjm5" id="prolog">Prolog</h1><p data-anchor-id="giuq"><code>Logic</code></p><hr><p data-anchor-id="txt9"><div class="toc"><div class="toc">
+<ul>
+<li><a href="#prolog">Prolog</a><ul>
+<li><a href="#1-the-basics">1. The Basics</a><ul>
+<li><a href="#11-getting-started">1.1 Getting Started</a></li>
+<li><a href="#12-prolog-syntax">1.2 Prolog Syntax</a><ul>
+<li><a href="#121-terms">1.2.1 Terms</a></li>
+<li><a href="#122-clauses-programs-and-queries">1.2.2 Clauses, Programs, and Queries</a></li>
+<li><a href="#123-some-built-in-predicates">1.2.3 Some Built-in Predicates</a></li>
+</ul>
+</li>
+<li><a href="#13-answering-queries">1.3 Answering Queries</a><ul>
+<li><a href="#131-matching">1.3.1 Matching</a></li>
+<li><a href="#132-goal-execution">1.3.2 Goal Execution</a></li>
+</ul>
+</li>
+<li><a href="#14-a-matter-of-style">1.4 A Matter of Style</a></li>
+</ul>
+</li>
+<li><a href="#2-list-manipulation">2. List Manipulation</a><ul>
+<li><a href="#21-notation">2.1 Notation</a></li>
+<li><a href="#22-head-and-tail">2.2 Head and Tail</a></li>
+<li><a href="#23-some-built-in-predicates-for-list-manipulation">2.3 Some Built-in Predicates for List Manipulation</a></li>
+</ul>
+</li>
+<li><a href="#3-arithmetic-expressions">3. Arithmetic Expressions</a><ul>
+<li><a href="#31-the-is-oprator-for-aeithmetic-evaluation">3.1 The is-Oprator for Aeithmetic Evaluation</a></li>
+<li><a href="#32-predefined-arithmetic-functions">3.2 Predefined Arithmetic Functions</a></li>
+</ul>
+</li>
+<li><a href="#4-operators">4. Operators</a><ul>
+<li><a href="#41-precedence-and-associativity">4.1 Precedence and Associativity</a></li>
+<li><a href="#42-declaring-operators-with-op3">4.2 Declaring Operators with op/3</a></li>
+</ul>
+</li>
+<li><a href="#5-backtracking-cuts-and-negation">5. Backtracking, Cuts and Negation</a><ul>
+<li><a href="#51-backtracking-and-cuts">5.1 Backtracking and Cuts</a><ul>
+<li><a href="#511-backtracking-revisited">5.1.1 Backtracking Revisited</a></li>
+<li><a href="#512-problems-with-backtracking">5.1.2 Problems with Backtracking</a></li>
+<li><a href="#513-introducing-cuts">5.1.3 Introducing Cuts</a></li>
+<li><a href="#514-problems-with-cuts">5.1.4 Problems with Cuts</a></li>
+</ul>
+</li>
+<li><a href="#52-negation-as-failure">5.2 Negation as Failure</a><ul>
+<li><a href="#521-the-closed-world-assumption">5.2.1 The Closed World Assumption</a></li>
+<li><a href="#522-the-operator">5.2.2 The \+ Operator</a></li>
+</ul>
+</li>
+<li><a href="#53-disjunction">5.3 Disjunction</a></li>
+<li><a href="#54-building-truth-table-with-prolog">5.4 Building Truth Table with Prolog</a></li>
+</ul>
+</li>
+<li><a href="#6-logic-foundations-of-prolog">6. Logic Foundations of Prolog</a><ul>
+<li><a href="#61-translation-of-prolog-clauses-into-formulas">6.1 Translation of Prolog Clauses into Formulas</a></li>
+<li><a href="#62-horn-formulas-and-resolution">6.2 Horn Formulas and Resolution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</p><hr><div class="md-section-divider"></div><h2 data-anchor-id="owiw" id="1-the-basics">1. The Basics</h2><div class="md-section-divider"></div><h3 data-anchor-id="s0zo" id="11-getting-started">1.1 Getting Started</h3><ul data-anchor-id="vmzi">
+<li>Prolog is a <strong>declarative</strong> programming language.</li>
+<li>When implementing the solution to a problem, instead of specifying how to achieve a certain goal in a certain situation, in prolog we specify what the situation (<strong>rules</strong> and <strong>facts</strong>) and the goal (<strong>query</strong>) are and let the Prolog interpreter derive the solution for us.</li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="n014" id="12-prolog-syntax">1.2 Prolog Syntax</h3><div class="md-section-divider"></div><h4 data-anchor-id="2ycr" id="121-terms">1.2.1 Terms</h4><ul data-anchor-id="cggs">
+<li>There are <strong>terms</strong> of four kinds: atoms, numbers, variables, and compound terms. <br>
+<ul><li>Atoms are numbers are sometimes grouped together and called <strong>atomic terms</strong>.</li></ul></li>
+<li><strong>Atoms</strong>: Atoms are usually strings made up of lower- and uppercase letters, digits, and the underscore, starting with a lowercase letter. <br>
+<ul><li>Atoms also refer to a series of characters enclosed in single quotes and strings made up solely of special characters.</li></ul></li>
+<li><strong>Numbers</strong>: integers (or negative integers) and sometimes floats.</li>
+<li><strong>Variables</strong>: variables are strings of letters, digits, and the underscore, starting with a capital letter or an underscore. <br>
+<ul><li>_ is called the <strong>anonymous variable</strong> and is used when the value of a variable is of no particular interest. </li>
+<li>Multiple occurrences of the anonymous variable in one expression are assumed to be distinct.</li></ul></li>
+<li><strong>Compound terms</strong>: compound terms are made up of a <strong>functor</strong> (a Prolog atom) and a number of <strong>arguments</strong>.</li>
+<li>The sets of compound terms and atoms together form the set of Prolog <strong>predicates</strong>. <br>
+<ul><li>A term that doesn't contain any variables is called a <strong>ground term</strong>.</li></ul></li>
+</ul><div class="md-section-divider"></div><h4 data-anchor-id="yk8e" id="122-clauses-programs-and-queries">1.2.2 Clauses, Programs, and Queries</h4><ul data-anchor-id="qj3q">
+<li><strong>Clauses</strong>: Prolog programs are made up of facts and rules, and they are called clauses. <br>
+<ul><li><strong>Facts</strong>: A fact is a predicate followed by a full stop. (<code>bigger(whale, _).</code>)</li>
+<li><strong>Rules</strong>: a rule consists of a <strong>head</strong> (a predicate) and a <strong>body</strong> (a sequence of predicates separated y commas). <br>
+<ul><li>Head and body are separated by the sign :- and terminated by a full stop.</li>
+<li>The goal expressed by its head is true if we can show that all of the expressions in the rule's body are true.</li></ul></li></ul></li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="6sgk" style=""><ol class="linenums"><li class="L0"><code class="language-prolog"><span class="pln">is_smaller</span><span class="pun">(</span><span class="pln">X</span><span class="pun">,</span><span class="pln"> Y</span><span class="pun">)</span><span class="pln"> </span><span class="pun">:-</span><span class="pln"> is_bigger</span><span class="pun">(</span><span class="pln">Y</span><span class="pun">,</span><span class="pln"> X</span><span class="pun">).</span></code></li><li class="L1"><code class="language-prolog"></code></li><li class="L2"><code class="language-prolog"><span class="pln">aunt</span><span class="pun">(</span><span class="typ">Aunt</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Child</span><span class="pun">)</span><span class="pln"> </span><span class="pun">:-</span></code></li><li class="L3"><code class="language-prolog"><span class="pln">    sister</span><span class="pun">(</span><span class="typ">Aunt</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Parent</span><span class="pun">),</span></code></li><li class="L4"><code class="language-prolog"><span class="pln">    parent</span><span class="pun">(</span><span class="typ">Parent</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Child</span><span class="pun">).</span></code></li></ol></pre><ul data-anchor-id="kpx5">
+<li><strong>Program</strong>: a Prolog program is a sequence of clauses.</li>
+<li><strong>queries</strong>: after compilation a Prolog program is run by submitting queries to the interpreter. <br>
+<ul><li>A query has the same structure as the body of a rule - it is a sequence of predicates separated by commas and terminated by a full stop.</li>
+<li>They can be entered at the PRolog prompt that usually looks like <code>?-</code>.</li></ul></li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="n0fj" style=""><ol class="linenums"><li class="L0"><code><span class="pln">    </span><span class="pun">?-</span><span class="pln"> is_bigger</span><span class="pun">(</span><span class="pln">elepant</span><span class="pun">,</span><span class="pln"> donkey</span><span class="pun">).</span></code></li><li class="L1"><code><span class="pln">    </span><span class="pun">?-</span><span class="pln"> small</span><span class="pun">(</span><span class="pln">X</span><span class="pun">),</span><span class="pln"> green</span><span class="pun">(</span><span class="pln">X</span><span class="pun">),</span><span class="pln"> slimy</span><span class="pun">(</span><span class="pln">X</span><span class="pun">).</span></code></li></ol></pre><div class="md-section-divider"></div><h4 data-anchor-id="6ew6" id="123-some-built-in-predicates">1.2.3 Some Built-in Predicates</h4><ul data-anchor-id="0wx6">
+<li><strong>Equality</strong>: <code>=(X, Y)</code> and <code>X = Y</code></li>
+<li><strong>Guaranteed success and certain failures</strong>: <code>true</code> and <code>fail</code></li>
+<li><strong>Consulting program files</strong>: programs can be compiled using the predicate <code>consult/1</code>. The argument has to be a Prolog atom denoting the program file you want to compile. <br>
+<ul><li>If the compilation is successful, Prolog will reply with <code>Yes</code>. Otherwise a list of errors will be displayed.</li></ul></li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="3oq6" style=""><ol class="linenums"><li class="L0"><code><span class="pln">    </span><span class="pun">?-</span><span class="pln"> consult</span><span class="pun">(</span><span class="str">'big-animals.pl'</span><span class="pun">)</span></code></li></ol></pre><ul data-anchor-id="ehv3">
+<li><strong>Output</strong>: if besides Prolog's replies to queries you wish your program to have further output you can use the <code>write/1</code> predicate. <br>
+<ul><li>The argument can be any valid Prolog term.</li>
+<li>In the case of a variable its value will get printed to the screen.</li>
+<li>Execution of the predicate <code>nl/0</code> causes the system to skip a line.</li></ul></li>
+<li><strong>Checking the type of a Prolog term</strong>: <code>atom/1</code>, <code>compound/1</code> and so on.</li>
+<li><strong>Help</strong>: <code>help/1</code> applied to a term the system will be displayed a short description, if available.</li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="5s8n" id="13-answering-queries">1.3 Answering Queries</h3><div class="md-section-divider"></div><h4 data-anchor-id="dwx0" id="131-matching">1.3.1 Matching</h4><ul data-anchor-id="vaoo">
+<li>Two terms are said to match if they are either identical or if they can be made identical by means of variable instantiation.  <br>
+<ul><li>Instantiating a variable means assigning it a fixed value. </li>
+<li>round term. It is important to note that the same variable has to be instantiated with the same value throughout an expression.</li>
+<li>The only exception to this rule is the anonymous variable _, which is considered to be unique whenever it occurs.</li></ul></li>
+<li>Two free variables also match, because they could be instantiated with the same <br>
+ground term.</li>
+</ul><div class="md-section-divider"></div><h4 data-anchor-id="epqo" id="132-goal-execution">1.3.2 Goal Execution</h4><ul data-anchor-id="wie2">
+<li>Submitting a query means asking Prolog to try to prove that the statement(s) implied by the query can be made true provided the right variable instantiations are made. <br>
+<ul><li>The search for such a proof is usually referred to as <strong>goal execution</strong>.</li></ul></li>
+<li>If a goal matches with the head of a rule, the respective variable instantiations are made inside the rule’s body, which then becomes the new goal to be satisfied. <br>
+<ul><li>the head of a rule is considered provably true, if the conjunction of all its body-predicates are provably true. </li></ul></li>
+<li>If a goal matches with a fact in our program, the proof for that goal is complete and the variable instantiations made during matching are communicated back to the surface. </li>
+<li>Sometimes there is more than one way of satisfying the current goal. Prolog chooses the first possibility (as determined by the order of clauses in a program), but the fact <br>
+that there are alternatives is recorded.</li>
+<li>If at some point Prolog fails to prove a certain subgoal, the system can go back and try an alternative way of executing the previous goal. <br>
+<ul><li>This process is known as <strong>backtracking</strong>.</li></ul></li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="wpoo" id="14-a-matter-of-style">1.4 A Matter of Style</h3><ul data-anchor-id="4zj7">
+<li><strong>Comments</strong>: <br>
+<ul><li>Multiline Comments <code>/* This is a comment. */</code></li>
+<li>inline comments: <code>% A comment</code></li></ul></li>
+<li>Conventions: <br>
+<ul><li>separate clauses by one or more blank lines.</li>
+<li>Write only one predicate perline and use indentation.</li>
+<li>Insert a space after every comma inside a compound term.</li>
+<li>write short clauses with bodies consisting of only a few goals. If necessary, split into shorter sub-clauses.</li>
+<li>Choose meaningful names for your variables and atoms.</li></ul></li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="ahbi" style=""><ol class="linenums"><li class="L0"><code class="language-prolog"><span class="pln">blond</span><span class="pun">(</span><span class="pln">X</span><span class="pun">)</span><span class="pln"> </span><span class="pun">:-</span></code></li><li class="L1"><code class="language-prolog"><span class="pln">    father</span><span class="pun">(</span><span class="typ">Father</span><span class="pun">,</span><span class="pln"> X</span><span class="pun">),</span></code></li><li class="L2"><code class="language-prolog"><span class="pln">    blond</span><span class="pun">(</span><span class="typ">Father</span><span class="pun">),</span></code></li><li class="L3"><code class="language-prolog"><span class="pln">    monther</span><span class="pun">(</span><span class="typ">Mother</span><span class="pun">,</span><span class="pln"> X</span><span class="pun">),</span></code></li><li class="L4"><code class="language-prolog"><span class="pln">    blond</span><span class="pun">(</span><span class="typ">Mother</span><span class="pun">).</span></code></li></ol></pre><hr><div class="md-section-divider"></div><h2 data-anchor-id="sr8r" id="2-list-manipulation">2. List Manipulation</h2><div class="md-section-divider"></div><h3 data-anchor-id="0txi" id="21-notation">2.1 Notation</h3><ul data-anchor-id="n5vf">
+<li>Lists are contained in square brackets with the elements being separated by commas. <br>
+<ul><li><code>[elephant, horse, donkey, dog]</code></li></ul></li>
+<li>Elements of lists could be any valid Prolog terms, i.e., atoms, numbers, variables, or compound terms.</li>
+<li>The empty list is written as [].</li>
+<li>Internally, lists are represented as compound terms using the functor .(dot). <br>
+<ul><li>The empty list [] is an atom, and elements are added one by one.</li>
+<li><code>[a, b, c]</code> corresponds to <code>.(a, .(b, .(c, [])))</code></li></ul></li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="43qz" id="22-head-and-tail">2.2 Head and Tail</h3><ul data-anchor-id="cahl">
+<li>The first elements of a list is called its <strong>head</strong> and the remaining list is called the <strong>tail</strong>. <br>
+<ul><li>An empty list doesn't have a head.</li>
+<li>A list just containing a single element has a head and its tail is the empty list.</li></ul></li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="nxd1" id="23-some-built-in-predicates-for-list-manipulation">2.3 Some Built-in Predicates for List Manipulation</h3><ul data-anchor-id="wfrn">
+<li><code>length/2</code>: the second argument is matched with the length of the list in the first argument.</li>
+<li><code>member/2</code>: the goal <code>member(Elem, List)</code> will succeed, if the term Elem can be matched with one of the members of the list List.</li>
+<li><code>append/3</code>: concatenate two lists of the first and the second arguments into the third one.</li>
+<li><code>last/2</code>: this predicate succeeds, if itss second argument matches the last element of the list given as the first argument.</li>
+<li><code>reverse/2</code>: this predicate can be used to reerse the order of elements in a list. The first argument has to be a fully instantiated list and the second one will be matched with the reversed lists.</li>
+<li><code>select/3</code>: given a list in the second argument and an element of that list in the first, this predicate will match the third argument with the remainder of that list.</li>
+</ul><hr><div class="md-section-divider"></div><h2 data-anchor-id="x04o" id="3-arithmetic-expressions">3. Arithmetic Expressions</h2><div class="md-section-divider"></div><h3 data-anchor-id="2u30" id="31-the-is-oprator-for-aeithmetic-evaluation">3.1 The is-Oprator for Aeithmetic Evaluation</h3><ul data-anchor-id="kcg3">
+<li>The <code>is</code> operator takes two arguments, of which the second has to be a valid arithmetic expression with all variables instantiated.</li>
+<li>The first argument has to be either a number or a variable representing a number.</li>
+<li>A call succeeds if the result of the arithmetic evaluation of the second argument matches with the first one.</li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="ovx0" style=""><ol class="linenums"><li class="L0"><code><span class="pun">?-</span><span class="pln"> X </span><span class="kwd">is</span><span class="pln"> </span><span class="lit">3</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="lit">5.</span></code></li><li class="L1"><code><span class="pln">X </span><span class="pun">=</span><span class="pln"> </span><span class="lit">8</span></code></li></ol></pre><div class="md-section-divider"></div><h3 data-anchor-id="d6fg" id="32-predefined-arithmetic-functions">3.2 Predefined Arithmetic Functions</h3><ul data-anchor-id="16qv">
+<li>Functions:  <br>
+<ul><li>Addition or multiplication are examples for arithmetic functions. <br>
+<ul><li>In Prolog all these functions are written in the natural way.</li>
+<li>All these functions can be used on the righthand side of the is-operator.</li></ul></li>
+<li>Addition: <code>2 is 1 + 1</code></li>
+<li>Subtraction: '0 is 1 - 1'</li>
+<li>Multiplication: <code>1 * 1 is 1</code></li>
+<li>Division: <code>1 / 1 is 1</code></li>
+<li>Power: <code>4 is 2 ** 2</code></li>
+<li>Maximum: <code>max/2</code> evaluates to the largest of its two arguments</li>
+<li>Minimum: <code>min/2</code></li>
+<li>Absolute Value: <code>abs/1</code></li>
+<li>Square Root: <code>sqrt/1</code></li>
+<li>Integer Devision <code>2 is 10 // 4</code></li>
+<li>Modulus: <code>2 is 10 mod 4</code>.</li>
+<li>Round to the next integer: <code>round/1</code></li>
+<li>Convert to floats: <code>float/1</code></li></ul></li>
+<li>Relations <br>
+<ul><li>Arithmetic relations are used to compare two evaluated arithmetic expressions.</li>
+<li>less than: <code>2 &lt; 3</code></li>
+<li>less than or equal: <code>2 =&lt; 3</code> (be carefully! it's not <code>&lt;=</code> but <code>=&lt;!</code>)</li>
+<li>greater than: <code>3 &gt; 2</code></li>
+<li>greater than or equal: <code>3 =&gt; 2</code></li>
+<li>non-equal: <code>=\=</code></li>
+<li>arithmetically equal <code>=:=</code> <br>
+<ul><li>The differentiation of <code>=:=</code> is crutial.</li>
+<li>The former compares two evaluated arithmetic expressions, whereas the later prforms logical pattern matching. </li></ul></li></ul></li>
+</ul><div class="md-section-divider"></div><h2 data-anchor-id="fbx0" id="4-operators">4. Operators</h2><div class="md-section-divider"></div><h3 data-anchor-id="xgi8" id="41-precedence-and-associativity">4.1 Precedence and Associativity</h3><ul data-anchor-id="fvvc">
+<li>Precedence <br>
+<ul><li>In prolog every operator is associated with an integer number between 0 and 1200 denoting its precedence.</li>
+<li>The lower the precedence number, the stronger the operator is binding.</li>
+<li>The precedence of a term is defined as 0, unless its principal functor is an operator, in which case the precedence is the precedence of this operator.</li></ul></li>
+<li>Associativity <br>
+<ul><li>There are <strong>infix</strong> operators (like +), <strong>prefix</strong> operators (like ¬ in logic), and <strong>postfix</strong> operators (like the factorial operator ! in mathematics).</li>
+<li>In Prolog associativity (together with such restrictions on arguments' precedences) <br>
+is represented by atoms like <code>yfx</code>. <br>
+<ul><li>Here f indicaes the position of the operator (i.e., yfx denotes an infix operator) and x and y indicate the position of the argument.</li>
+<li>A <code>y</code>should be as as on this position a term with a precedence less than or equal to that of the operator has to occur, where <code>x</code> means that on this position a term with a precedence strictly less than that of the operator has to occur.</li></ul></li></ul></li>
+<li>Checking Precedence and Associativity <br>
+<ul><li>It is possible to check both precedence and associativity of any previously defined operator by using the predicate <code>current_op/3</code>. </li>
+<li>If the last of its arguments is instantiated with the name of an operator it will match the first one with the operator’s precedence and the second with its associativity pattern.</li></ul></li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="tq85" style=""><ol class="linenums"><li class="L0"><code class="language-prolog"><span class="pun">?-</span><span class="pln"> current_op</span><span class="pun">(</span><span class="typ">Precedence</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Associativity</span><span class="pun">,</span><span class="pln"> </span><span class="pun">*).</span></code></li><li class="L1"><code class="language-prolog"><span class="typ">Precedence</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="lit">400</span></code></li><li class="L2"><code class="language-prolog"><span class="typ">Associativity</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> yfx</span></code></li><li class="L3"><code class="language-prolog"><span class="typ">Yes</span></code></li></ol></pre><table data-anchor-id="citb" class="table table-striped-white table-bordered">
+<thead>
+<tr>
+ <th style="text-align:center;">Pattern</th>
+ <th style="text-align:center;">Associativity</th>
+ <th style="text-align:center;">Example</th>
+</tr>
+</thead>
+<tbody><tr>
+ <td style="text-align:center;"><code>yfx</code></td>
+ <td style="text-align:center;">infix, left-associative</td>
+ <td style="text-align:center;">+, -, *</td>
+</tr>
+<tr>
+ <td style="text-align:center;"><code>xfy</code></td>
+ <td style="text-align:center;">infix, right-associative</td>
+ <td style="text-align:center;">, (for subgoals)</td>
+</tr>
+<tr>
+ <td style="text-align:center;"><code>xfx</code></td>
+ <td style="text-align:center;">infix</td>
+ <td style="text-align:center;">non-associative</td>
+</tr>
+<tr>
+ <td style="text-align:center;"><code>yfy</code></td>
+ <td style="text-align:center;">makes no sense, strucruing would be impossible</td>
+ <td style="text-align:center;">NA</td>
+</tr>
+<tr>
+ <td style="text-align:center;"><code>fy</code></td>
+ <td style="text-align:center;">prefix</td>
+ <td style="text-align:center;">associative</td>
+</tr>
+<tr>
+ <td style="text-align:center;"><code>fx</code></td>
+ <td style="text-align:center;">prefix</td>
+ <td style="text-align:center;">non-associative</td>
+</tr>
+<tr>
+ <td style="text-align:center;"><code>yf</code></td>
+ <td style="text-align:center;">postfix</td>
+ <td style="text-align:center;">associative</td>
+</tr>
+<tr>
+ <td style="text-align:center;"><code>xf</code></td>
+ <td style="text-align:center;">postfix</td>
+ <td style="text-align:center;">non-associative</td>
+</tr>
+</tbody></table><div class="md-section-divider"></div><h3 data-anchor-id="z4jv" id="42-declaring-operators-with-op3">4.2 Declaring Operators with <code>op/3</code></h3><ul data-anchor-id="pz2h">
+<li>Operators are declared using the <code>op/3</code> predicate, which has the same syntax as <br>
+<code>current_op/3</code>.  <br>
+<ul><li>The difference is that this one actually defines the operator rather than retrieving its definition. Therefore, all arguments have to be instantiated.</li>
+<li>Any Prolog atom could become the name of an operator, unless it is one already</li></ul></li>
+<li>You may put any query you like directly into a program file, which will cause it to be executed whenever you consult that file. <br>
+<ul><li>The syntax for such queries is similar <br>
+to rules, but without a head.</li>
+<li>Putting an op query into a program so that we do not have to redefine all our operators every time we re-start the Prolog intepreter.</li></ul></li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="o7qs" style=""><ol class="linenums"><li class="L0"><code><span class="pun">:-</span><span class="pln"> op</span><span class="pun">(</span><span class="lit">300</span><span class="pun">,</span><span class="pln"> xfx</span><span class="pun">,</span><span class="pln"> is_bigger</span><span class="pun">).</span></code></li></ol></pre><div class="md-section-divider"></div><h2 data-anchor-id="erec" id="5-backtracking-cuts-and-negation">5. Backtracking, Cuts and Negation</h2><div class="md-section-divider"></div><h3 data-anchor-id="iat9" id="51-backtracking-and-cuts">5.1 Backtracking and Cuts</h3><div class="md-section-divider"></div><h4 data-anchor-id="818v" id="511-backtracking-revisited">5.1.1 Backtracking Revisited</h4><ul data-anchor-id="0xvp">
+<li>The process of <strong>backtracking</strong> refers to how prolog queries. <br>
+<ul><li>During proof search, Prolog keeps track of choicepoints, i.e., situations where there is more than one possible match.</li>
+<li>Whenever the chosen path ultimately turns out to be a failure (or if the user asks for alternative solutions), the system can jump back to the last choicepoint and try the next alternative.</li></ul></li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="d3ma" style=""><ol class="linenums"><li class="L0"><code class="language-prolog"><span class="pln">permutation</span><span class="pun">([],[]).</span></code></li><li class="L1"><code class="language-prolog"></code></li><li class="L2"><code class="language-prolog"><span class="pln">permutation</span><span class="pun">(</span><span class="typ">List</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="typ">Element</span><span class="pun">|</span><span class="typ">Permutation</span><span class="pun">]):-</span></code></li><li class="L3"><code class="language-prolog"><span class="pln">    </span><span class="kwd">select</span><span class="pun">(</span><span class="typ">Element</span><span class="pun">,</span><span class="pln"> </span><span class="typ">List</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Rest</span><span class="pun">),</span></code></li><li class="L4"><code class="language-prolog"><span class="pln">    permutation</span><span class="pun">(</span><span class="typ">Rest</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Permutation</span><span class="pun">).</span></code></li></ol></pre><div class="md-section-divider"></div><h4 data-anchor-id="fcei" id="512-problems-with-backtracking">5.1.2 Problems with Backtracking</h4><ul data-anchor-id="qfnh">
+<li>There are cases where backtracking is not desirable.</li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="pis0" style=""><ol class="linenums"><li class="L0"><code class="language-prolog"><span class="pln">remove_duplicates</span><span class="pun">([],[]).</span></code></li><li class="L1"><code class="language-prolog"></code></li><li class="L2"><code class="language-prolog"><span class="pln">remove_duplicates</span><span class="pun">([</span><span class="typ">Head</span><span class="pln"> </span><span class="pun">|</span><span class="pln"> </span><span class="typ">Tail</span><span class="pun">],</span><span class="pln"> </span><span class="typ">Result</span><span class="pun">):-</span></code></li><li class="L3"><code class="language-prolog"><span class="pln">    member</span><span class="pun">(</span><span class="typ">Head</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Tail</span><span class="pun">),</span></code></li><li class="L4"><code class="language-prolog"><span class="pln">    remove_duplicates</span><span class="pun">(</span><span class="typ">Tail</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Result</span><span class="pun">).</span></code></li><li class="L5"><code class="language-prolog"></code></li><li class="L6"><code class="language-prolog"><span class="pln">remove_duplicates</span><span class="pun">([</span><span class="typ">Head</span><span class="pln"> </span><span class="pun">|</span><span class="pln"> </span><span class="typ">Tail</span><span class="pun">],</span><span class="pln"> </span><span class="pun">[</span><span class="typ">Head</span><span class="pln"> </span><span class="pun">|</span><span class="pln"> </span><span class="typ">Result</span><span class="pun">]):-</span></code></li><li class="L7"><code class="language-prolog"><span class="pln">    remove_duplicates</span><span class="pun">(</span><span class="typ">Tail</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Result</span><span class="pun">).</span></code></li></ol></pre><ul data-anchor-id="d0sh">
+<li>The first solution found by Prolog will indeed always be the intended result. But when requesting alternative solution things will start going wrong. <br>
+<ul><li>The two rules provide a choicepoint.</li>
+<li>For the first branch of the search tree Prolog will always pick the first rule, if that is possible, i.e., whenever the head is a member of the tail it will be discarded. </li>
+<li>During backtracking, however, also all other branches of the search tree will be visited. </li></ul></li>
+<li>To solve this problem we need a way of telling Prolog that, even when the user requests further solutions, there are no such alternatives and the goal should fail.</li>
+</ul><div class="md-section-divider"></div><h4 data-anchor-id="tpk3" id="513-introducing-cuts">5.1.3 Introducing Cuts</h4><ul data-anchor-id="17a5">
+<li>It is possible to explicityly "cut out" backtracking choicepoints, thereby guiding the proof search and prohibiting unwanted alternative solutions to a query.</li>
+<li>A cut is written as <code>!</code>. <br>
+<ul><li>It is predefined Prolog predicate and can be placed anywhere inside a rule's body (or similarly, be part of a sequence of a subgoals in a query).</li>
+<li>Executing the subgoal <code>!</code> will always succeed, but afterwards backtracking into subgoals placed before the cut inside the same rule body is not possible anymore.</li></ul></li>
+<li>Whenever a cut is encountered in a rule's body, all choices made between the time that rule's head has been matched with the parent goal and the time the cut is passed are final, i.e., any choicepoints are being discarded.</li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="wzj5" style=""><ol class="linenums"><li class="L0"><code class="language-prolog"><span class="pln">remove_duplicates</span><span class="pun">([],[]).</span></code></li><li class="L1"><code class="language-prolog"></code></li><li class="L2"><code class="language-prolog"><span class="pln">remove_duplicates</span><span class="pun">([</span><span class="typ">Head</span><span class="pln"> </span><span class="pun">|</span><span class="pln"> </span><span class="typ">Tail</span><span class="pun">],</span><span class="pln"> </span><span class="typ">Result</span><span class="pun">):-</span></code></li><li class="L3"><code class="language-prolog"><span class="pln">    member</span><span class="pun">(</span><span class="typ">Head</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Tail</span><span class="pun">),</span><span class="pln"> </span><span class="pun">!,</span></code></li><li class="L4"><code class="language-prolog"><span class="pln">    remove_duplicates</span><span class="pun">(</span><span class="typ">Tail</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Result</span><span class="pun">).</span></code></li><li class="L5"><code class="language-prolog"></code></li><li class="L6"><code class="language-prolog"><span class="pln">remove_duplicates</span><span class="pun">([</span><span class="typ">Head</span><span class="pln"> </span><span class="pun">|</span><span class="pln"> </span><span class="typ">Tail</span><span class="pun">],</span><span class="pln"> </span><span class="pun">[</span><span class="typ">Head</span><span class="pln"> </span><span class="pun">|</span><span class="pln"> </span><span class="typ">Result</span><span class="pun">]):-</span></code></li><li class="L7"><code class="language-prolog"><span class="pln">    remove_duplicates</span><span class="pun">(</span><span class="typ">Tail</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Result</span><span class="pun">).</span></code></li></ol></pre><div class="md-section-divider"></div><h4 data-anchor-id="p8l1" id="514-problems-with-cuts">5.1.4 Problems with Cuts</h4><ul data-anchor-id="l8ng">
+<li>By introducing cuts, we give up some of the declarative character of Prolog and move towards a more procedural system, and this can sometimes lead to unexpected results.</li>
+* 
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="hx0e" id="52-negation-as-failure">5.2 Negation as Failure</h3><div class="md-section-divider"></div><h4 data-anchor-id="c1bb" id="521-the-closed-world-assumption">5.2.1 The Closed World Assumption</h4><ul data-anchor-id="xhxk">
+<li>In order to give a positive answer to a query, Prolog has to construct a proof to show that the set of facts and rules of a program implies that query. <br>
+<ul><li>Therefore, answering yes to a query means not only that the query is true, but that it is provably true.</li>
+<li>Consequently a No doesn't mean the query is necessarily false, just not provably true: Prolog failed to derive a proof.</li></ul></li>
+<li>The attitude of negating everything that is not explicitly in the program or can be concluded from the information provided by the program is ofen referred to as the <strong>closed world assumption</strong>.</li>
+</ul><div class="md-section-divider"></div><h4 data-anchor-id="7w9l" id="522-the-operator">5.2.2 The <code>\+</code> Operator</h4><ul data-anchor-id="yjnk">
+<li><code>\+</code> operator is a prefix operator that can be applied to any valid Prolog goal. <br>
+<ul><li>A goal of the form <code>\+ Goal</code> succeeds, if the goal <code>Goal</code> fails and vice versa.</li>
+<li>This semantics of the negation operator is known as <strong>negation as failure</strong>.</li></ul></li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="fv4z" style=""><ol class="linenums"><li class="L0"><code class="language-prolog"><span class="pln">single</span><span class="pun">(</span><span class="typ">Person</span><span class="pun">):-</span></code></li><li class="L1"><code class="language-prolog"><span class="pln">    \+ married</span><span class="pun">(</span><span class="typ">Person</span><span class="pun">,</span><span class="pln">_</span><span class="pun">),</span></code></li><li class="L2"><code class="language-prolog"><span class="pln">    \+ married</span><span class="pun">(</span><span class="pln">_</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Person</span><span class="pun">).</span></code></li></ol></pre><div class="md-section-divider"></div><h3 data-anchor-id="1xz5" id="53-disjunction">5.3 Disjunction</h3><ul data-anchor-id="jhbt">
+<li>If there are two rules with the same head in a program then this represents a disjunction, because during the goal execution process Prolog could choose either one of the two rule bodies when the current goal matches the common rule-head.  <br>
+<ul><li>we can also use <code>;</code> (semicolon) to separate two subgoals.</li></ul></li>
+<li>Note that the precedence value of <code>;</code> (semicolon) is higher than that of <code>,</code> (comma). <br>
+<ul><li>Therefore, when implementing a disjunction inside a conjunction you have to structure your rule-body using parentheses.</li></ul></li>
+</ul><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="qwdb" style=""><ol class="linenums"><li class="L0"><code class="language-prolog"><span class="pln">parent</span><span class="pun">(</span><span class="pln">X</span><span class="pun">,</span><span class="pln"> Y</span><span class="pun">):-</span></code></li><li class="L1"><code class="language-prolog"><span class="pln">    father</span><span class="pun">(</span><span class="pln">X</span><span class="pun">,</span><span class="pln"> Y</span><span class="pun">).</span></code></li><li class="L2"><code class="language-prolog"></code></li><li class="L3"><code class="language-prolog"><span class="pln">parent</span><span class="pun">(</span><span class="pln">X</span><span class="pun">,</span><span class="pln"> Y</span><span class="pun">):-</span></code></li><li class="L4"><code class="language-prolog"><span class="pln">    mother</span><span class="pun">(</span><span class="pln">X</span><span class="pun">,</span><span class="pln"> Y</span><span class="pun">).</span></code></li><li class="L5"><code class="language-prolog"></code></li><li class="L6"><code class="language-prolog"><span class="pun">/%</span><span class="pln"> </span><span class="typ">The</span><span class="pln"> above </span><span class="kwd">is</span><span class="pln"> equivalent to the below </span><span class="pun">%/</span></code></li><li class="L7"><code class="language-prolog"><span class="pln">parent</span><span class="pun">(</span><span class="pln">X</span><span class="pun">,</span><span class="pln">Y</span><span class="pun">):-</span></code></li><li class="L8"><code class="language-prolog"><span class="pln">    father</span><span class="pun">(</span><span class="pln">X</span><span class="pun">,</span><span class="pln">Y</span><span class="pun">);</span></code></li><li class="L9"><code class="language-prolog"><span class="pln">    mother</span><span class="pun">(</span><span class="pln">X</span><span class="pun">,</span><span class="pln">Y</span><span class="pun">).</span></code></li></ol></pre><div class="md-section-divider"></div><h3 data-anchor-id="r1uk" id="54-building-truth-table-with-prolog">5.4 Building Truth Table with Prolog</h3><div class="md-section-divider"></div><pre class="prettyprint linenums prettyprinted" data-anchor-id="muro" style=""><ol class="linenums"><li class="L0"><code class="language-prolog"><span class="kwd">false</span><span class="pun">:-</span><span class="pln"> fail</span><span class="pun">.</span></code></li><li class="L1"><code class="language-prolog"><span class="kwd">and</span><span class="pun">(</span><span class="pln">A</span><span class="pun">,</span><span class="pln"> B</span><span class="pun">):-</span></code></li><li class="L2"><code class="language-prolog"><span class="pln">    call</span><span class="pun">(</span><span class="pln">A</span><span class="pun">),</span></code></li><li class="L3"><code class="language-prolog"><span class="pln">    call</span><span class="pun">(</span><span class="pln">B</span><span class="pun">).</span></code></li><li class="L4"><code class="language-prolog"></code></li><li class="L5"><code class="language-prolog"><span class="kwd">or</span><span class="pun">(</span><span class="pln">A</span><span class="pun">,</span><span class="pln"> B</span><span class="pun">):-</span></code></li><li class="L6"><code class="language-prolog"><span class="pln">    call</span><span class="pun">(</span><span class="pln">A</span><span class="pun">);</span></code></li><li class="L7"><code class="language-prolog"><span class="pln">    call</span><span class="pun">(</span><span class="pln">B</span><span class="pun">).</span></code></li><li class="L8"><code class="language-prolog"></code></li><li class="L9"><code class="language-prolog"><span class="pln">neg</span><span class="pun">(</span><span class="pln">A</span><span class="pun">)</span><span class="pln"> </span><span class="pun">:-</span></code></li><li class="L0"><code class="language-prolog"><span class="pln">    \+ call</span><span class="pun">(</span><span class="pln">A</span><span class="pun">).</span></code></li><li class="L1"><code class="language-prolog"></code></li><li class="L2"><code class="language-prolog"><span class="pln">implies</span><span class="pun">(</span><span class="pln">A</span><span class="pun">,</span><span class="pln"> B</span><span class="pun">):-</span></code></li><li class="L3"><code class="language-prolog"><span class="pln">    call</span><span class="pun">(</span><span class="pln">A</span><span class="pun">),</span></code></li><li class="L4"><code class="language-prolog"><span class="pln">    </span><span class="pun">!,</span></code></li><li class="L5"><code class="language-prolog"><span class="pln">    call</span><span class="pun">(</span><span class="pln">B</span><span class="pun">).</span></code></li><li class="L6"><code class="language-prolog"></code></li><li class="L7"><code class="language-prolog"><span class="pln">implies</span><span class="pun">(</span><span class="pln">_</span><span class="pun">,</span><span class="pln"> _</span><span class="pun">).</span></code></li></ol></pre><div class="md-section-divider"></div><h2 data-anchor-id="0ldw" id="6-logic-foundations-of-prolog">6. Logic Foundations of Prolog</h2><div class="md-section-divider"></div><h3 data-anchor-id="7kns" id="61-translation-of-prolog-clauses-into-formulas">6.1 Translation of Prolog Clauses into Formulas</h3><ul data-anchor-id="khcy">
+<li>Prolog predicates corredpond to predicate symbols in logic predicates. <br>
+<ul><li>These terms are made up of constants (Prolog atoms), variables (Prolog variables), and function symbols (Prolog functor) </li>
+<li><code>:-</code> is an implication from right to left.</li>
+<li>The comma <code>,</code> separating subgoals in a clause constitutes a conjunction.</li>
+<li>Prolog queries can be seen as Prolog rules with an empty head, and the empty head is translated as ⊥ (falsum).</li>
+<li>When translating a clause, for every variable X appearing in the clause we have to put ∀x in front of the resultign formula.</li></ul></li>
+<li>Translating Prolog into FOL <br>
+<ul><li>Each clause has to be quantified independently.</li>
+<li>This corresponds to the fact that variables from distinct clauses are independent from each other, even when they've been given the same name.</li></ul></li>
+</ul><div class="md-section-divider"></div><h3 data-anchor-id="hl9b" id="62-horn-formulas-and-resolution">6.2 Horn Formulas and Resolution</h3><ul data-anchor-id="od5r">
+<li>Every formula we get when translating a Prolog program into first-order formulas can be transformed into a universally quantified disjunction of literals with at most one positive literal, and such formulas are called <strong>Horn formulas</strong></li>
+</ul></div>
+</body>
+</html>
