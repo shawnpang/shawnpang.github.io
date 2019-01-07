@@ -11,8 +11,9 @@ redirect_from:
 ##  All Notes
 
   * CS
-      * [CS2209](https://smallsillyshawn.github.io/files/Stanford%20Logic.html) (modified with Stanford's online course)
+      * CS2209 [Propositional Logic](https://smallsillyshawn.github.io/files/Stanford%20Logic.html) [Prolog](https://smallsillyshawn.github.io/files/Prolog.html)
       * [CS2211](https://smallsillyshawn.github.io/files/CS2211.html)
+      * 
   * MATH
       * [STAT2244](https://smallsillyshawn.github.io/files/STAT2244.html)
       * [CAL1000/1301](https://smallsillyshawn.github.io/files/CAL1301.pdf)
