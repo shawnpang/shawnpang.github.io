@@ -20,7 +20,8 @@ redirect_from:
   * BUSINESS
       * [MOS1021](https://smallsillyshawn.github.io/files/MOS1021.pdf)
       * [MOS2242](https://smallsillyshawn.github.io/files/MOS2242.html)
-      * [BUS2257](https://smallsillyshawn.github.io/files/BUS2257.html)
+      * [BUS2257 First Term](https://smallsillyshawn.github.io/files/BUS2257.html)
+      * [BUZ2257 Second Term](https://smallsillyshawn.github.io/files/BIS2257B.html)
   * ECON
       * [ECON1021](https://smallsillyshawn.github.io/files/ECON1021.pdf) [ECON1021 MindMap](https://smallsillyshawn.github.io/files/ECON1021 MindMap.pdf)
       * [exam1](https://smallsillyshawn.github.io/files/Econ1021Exam1.pdf) [exam2](https://smallsillyshawn.github.io/files/Econ1021Exam2.pdf) [exam3](https://smallsillyshawn.github.io/files/Econ1021Exam3.pdf)
