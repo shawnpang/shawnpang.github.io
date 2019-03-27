@@ -25,6 +25,7 @@ redirect_from:
   * ECON
       * [ECON1021](https://smallsillyshawn.github.io/files/ECON1021.pdf) [ECON1021 MindMap](https://smallsillyshawn.github.io/files/ECON1021 MindMap.pdf)
       * [exam1](https://smallsillyshawn.github.io/files/Econ1021Exam1.pdf) [exam2](https://smallsillyshawn.github.io/files/Econ1021Exam2.pdf) [exam3](https://smallsillyshawn.github.io/files/Econ1021Exam3.pdf)
-      * [ECON1022 Exam1](https://smallsillyshawn.github.io/files/ECON1022MIDTERM1.html) [ECON1022 Midterm2 Mindmap](https://mubu.com/doc/2xhevH1wLu)
+      * [ECON1022 Exam1](https://smallsillyshawn.github.io/files/ECON1022MIDTERM1.html)
+      * [ECON1022 Midterm2 Mindmap](https://mubu.com/doc/2xhevH1wLu)
   * OTHERS
       * [PSYCH1000](https://smallsillyshawn.github.io/files/PSYCH1000.pdf)
