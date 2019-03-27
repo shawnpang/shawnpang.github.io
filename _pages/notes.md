@@ -21,7 +21,7 @@ redirect_from:
       * [MOS1021](https://smallsillyshawn.github.io/files/MOS1021.pdf)
       * [MOS2242](https://smallsillyshawn.github.io/files/MOS2242.html)
       * [BUS2257 First Term](https://smallsillyshawn.github.io/files/BUS2257.html)
-      * [BUZ2257 Second Term](https://smallsillyshawn.github.io/files/BIS2257B.html)
+      * [BUZ2257 Second Term](https://smallsillyshawn.github.io/files/BIZ2257B.html)
   * ECON
       * [ECON1021](https://smallsillyshawn.github.io/files/ECON1021.pdf) 
       * [ECON1021 MindMap](https://smallsillyshawn.github.io/files/ECON1021MindMap.pdf)
